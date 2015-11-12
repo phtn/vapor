@@ -4,16 +4,26 @@ template(name='nav')
 			div.navbar-header
 				a(href='/').navbar-brand
 					img(alt='Brand' width='200' height='auto' src='/assets/img/vaportimme-logo-purple-green.png')
-			div.row-fluid
-				div.col-xs-1
-					a.btn.btn-primary.links Home
-				div.col-xs-1
-					a.btn.btn-primary.links eJuice
-				div.col-xs-1
-					a.btn.btn-primary.links Mods
-				div.col-xs-1
-					a.btn.btn-primary.links FAQ
-				div.col-xs-2
-					a.btn.btn-primary.links Find Us
-				div.col-xs-4
-					a.btn.btn-primary.links Sign In
+				
+				ul.nav.nav-tabs.nav-justified
+					li
+						a.btn.btn-default.btn-flat.links
+							i.fa.fa-home &nbsp; HOME
+					li
+						a.btn.btn-default.btn-flat.links
+							i.fa.fa-flask &nbsp;  E JUICE
+					li
+						a.btn.btn-default.btn-flat.links
+							i.fa.fa-tablet &nbsp;  MODS
+					li
+						a.btn.btn-default.btn-flat.links
+							i.fa.fa-question-circle &nbsp;  FAQ
+					li
+						a.btn.btn-default.btn-flat.links
+							i.fa.fa-facebook-square &nbsp;  SOCIAL
+					li
+						a.btn.btn-default.btn-flat.links
+							i.fa.fa-shopping-cart &nbsp;  STORE
+					li
+						a.btn.btn-default.btn-flat.links
+							i.fa.fa-user &nbsp;  SIGN IN
