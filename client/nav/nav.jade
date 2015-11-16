@@ -1,29 +1,30 @@
 template(name='nav')
-	nav.navbar.navbar-default
+	nav.navbar.navbar-default.navbar-fixed-top
 		div.container-fluid
 			div.navbar-header
-				a(href='/').navbar-brand.withoutripple
+				a(href='/home').navbar-brand.withoutripple
 					img(alt='Brand' width='200' height='auto' src='/assets/img/vaportimme-logo-purple-green.png')
 				
 				ul.nav.nav-tabs.nav-justified
-					li
-						a.btn.btn-default.btn-flat.links
+					li#home
+						a(href='/home').btn.btn-default.btn-flat.links
 							i.fa.fa-home &nbsp; HOME
+					li#e-juice
+						a(href='/ejuice').btn.btn-default.btn-flat.links
+							i.fa.fa-flask &nbsp;  E - JUICE
 					li
 						a.btn.btn-default.btn-flat.links
-							i.fa.fa-flask &nbsp;  E JUICE
+							i.fa.fa-tablet#mods &nbsp;  MODS
 					li
 						a.btn.btn-default.btn-flat.links
-							i.fa.fa-tablet &nbsp;  MODS
+							i.fa.fa-question-circle#faq &nbsp;  FAQ
 					li
 						a.btn.btn-default.btn-flat.links
-							i.fa.fa-question-circle &nbsp;  FAQ
+							i.fa.fa-facebook-square#social &nbsp;  SOCIAL
 					li
 						a.btn.btn-default.btn-flat.links
-							i.fa.fa-facebook-square &nbsp;  SOCIAL
+							i.fa.fa-shopping-cart#cart &nbsp;  CART
+							span.badge.badge-default 0
 					li
 						a.btn.btn-default.btn-flat.links
-							i.fa.fa-shopping-cart &nbsp;  STORE
-					li
-						a.btn.btn-default.btn-flat.links
-							i.fa.fa-user &nbsp;  SIGN IN
+							i.fa.fa-user#sign-in &nbsp;  SIGN IN

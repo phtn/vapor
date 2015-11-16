@@ -1,0 +1,1 @@
+Ejuice = new Mongo.Collection('ejuice');

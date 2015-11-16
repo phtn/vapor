@@ -1,0 +1,43 @@
+template(name='admin')
+	div.container-fluid.text-center
+		h2 ADMIN TOOLS
+	div.container-fluid.admin-div
+			ul.nav.nav-tabs.nav-justified.sub-title.text-center
+				li
+					a(href='#ejuice-content' data-toggle='tab')#ejuice-ad E-Juice
+				li
+					a(href='#mods-content' data-toggle='tab')#mods-ad MODS
+	div.tab-content
+		div.tab-pane.fade#ejuice-content
+			div.container-fluid.admin-div
+						ul.nav.nav-tabs.nav-justified.text-center
+							li
+								a(href='#add-content' data-toggle='tab')#add-tab ADD
+							li
+								a(href='#edit-content' data-toggle='tab')#edit-tab EDIT
+							li
+								a(href='#remove-content' data-toggle='tab')#remove-tab REMOVE
+			div.tab-content
+
+				div.tab-pane.fade#add-content
+					div.container-fluid.text-center.ejuice-div-admin
+						p Add E-Juice to Inventory
+						br
+						input(type='text' placeholder='Item No.').form-control#item-ej
+						br
+						input(type='text' placeholder='Name').form-control#name-ej
+						br
+						input(type='text' placeholder='Description').form-control#desc-ej
+						br
+						input(type='text' placeholder='Image URL').form-control#url-ej
+						br
+						input(type='text' placeholder='Price').form-control#price-ej
+						br
+						button.btn.btn-primary#add-ejuice-btn
+							i.fa.fa-plus &nbsp; ADD E-JUICE
+
+		div.tab-pane.fade#mods-content
+			div.container-fluid.text-center
+				h1 Mods
+
+		
