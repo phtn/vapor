@@ -23,6 +23,14 @@ Template.ejuice.helpers({
 
 Template.ejuice.events({
 	'click #add-to-cart-ej' () {
-		console.log(this.name)
+		console.log(this.url);
+		Session.set('ejuice-name', this.name)
+		Meteor.call('insertToCart', this._id, this.name, this.desc, this.url, this.price)
+		Bert.alert({
+				type: 'addThis',
+				style: 'fixed-bottom',
+				message: Session.get('ejuice-name') + ' added to your cart!',
+				icon: 'fa-check'
+			})
 	} 
 });

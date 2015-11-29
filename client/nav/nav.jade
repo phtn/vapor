@@ -5,7 +5,7 @@ template(name='nav')
 				a(href='/home').navbar-brand.withoutripple
 					img(alt='Brand' width='200' height='auto' src='/assets/img/vaportimme-logo-purple-green.png')
 				
-				ul.nav.nav-tabs.nav-justified
+				ul.nav.nav-tabs.nav-justified.lg-screen
 					li#home
 						a(href='/home').btn.btn-default.btn-flat.links
 							i.fa.fa-home &nbsp; HOME
@@ -22,9 +22,58 @@ template(name='nav')
 						a.btn.btn-default.btn-flat.links
 							i.fa.fa-facebook-square#social &nbsp;  SOCIAL
 					li
-						a.btn.btn-default.btn-flat.links
+						a(href='/cart').btn.btn-default.btn-flat.links
 							i.fa.fa-shopping-cart#cart &nbsp;  CART
-							span.badge.badge-default 0
+							span.badge.badge-default #{countCart}
 					li
 						a.btn.btn-default.btn-flat.links
 							i.fa.fa-user#sign-in &nbsp;  SIGN IN
+				ul.nav.nav-tabs.nav-justified.mobile-screen
+					li.pull-right
+						a(href='bootstrap-elements.html' data-toggle='dropdown').dropdown-toggle.btn.btn-default.btn-flat.links#menu
+							span MENU
+							span
+								i.fa.fa-caret-down
+						ul(arialabelledby='menu').dropdown-menu
+							li
+								a(href='/home')
+									span
+										i.fa.fa-home
+									span HOME
+							hr
+							li
+								a(href='/ejuice')
+									span
+										i.fa.fa-flask
+									span E-JUICE
+							hr
+							li
+								a(href='#')
+									span
+										i.fa.fa-tablet
+									span MODS
+							hr
+							li
+								a(href='#')
+									span
+										i.fa.fa-question-circle
+									span FAQS
+							hr
+							li
+								a(href='#')
+									span
+										i.fa.fa-facebook-square
+									span SOCIAL
+							hr
+							li
+								a(href='/cart')
+									span
+										i.fa.fa-shopping-cart
+									span CART
+									span.badge.badge-default #{countCart}
+							hr
+							li
+								a(href='#')
+									span
+										i.fa.fa-user
+									span SIGN IN

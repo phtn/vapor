@@ -22,6 +22,13 @@ FlowRouter.route('/ejuice', {
 	}
 });
 
+FlowRouter.route('/cart', {
+	name: 'Cart',
+	action(params) {
+		renderThisTemplate('cart')
+	}
+});
+
 FlowRouter.route('/admin', {
 	name: 'Admin',
 	action(params) {

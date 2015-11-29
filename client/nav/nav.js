@@ -11,3 +11,9 @@ Template.nav.events({
 		FlowRouter.go('/ejuice')
 	}
 });
+
+Template.nav.helpers({
+	countCart () {
+		return Cart.find({}).count()
+	}
+});

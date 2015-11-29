@@ -1,0 +1,14 @@
+template(name='cart')
+	div.container-fluid.cart-div
+		div.list-group
+			each cartItems
+				div.container-fluid
+					div.list-group-item.cart-items
+						div.row-picture
+							img(url='#{url}')
+						div.row-content
+							div.action-secondary#trash
+								i.fa.fa-trash-o
+							h5.list-group-item-heading #{name}
+							p #{desc}
+					div.list-group-separator
