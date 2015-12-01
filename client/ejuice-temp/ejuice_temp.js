@@ -1,3 +1,7 @@
+Template.ejuiceTemp.rendered = ()=> {
+	Session.seDefault('ejuice-price', 13.99)
+}
+
 Template.ejuiceTemp.helpers({
 	name () {
 		return Session.get('ejuice-name')
@@ -7,5 +11,9 @@ Template.ejuiceTemp.helpers({
 	},
 	url () {
 		return Session.get('ejuice-url')
+	},
+	price () {
+		return Session.get('ejuice-price')
 	}
-})
+});
+
