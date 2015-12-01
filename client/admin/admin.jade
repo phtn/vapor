@@ -23,16 +23,16 @@ template(name='admin')
 					div.container-fluid.text-center.ejuice-div-admin
 						p Add E-Juice to Inventory
 						br
-						input(type='text' placeholder='Item No.').form-control#item-ej
-						br
 						input(type='text' placeholder='Name').form-control#name-ej
-						br
 						input(type='text' placeholder='Description').form-control#desc-ej
-						br
 						input(type='text' placeholder='Image URL').form-control#url-ej
 						br
-						input(type='text' placeholder='Price').form-control#price-ej
-						br
+						p Price per Bottle Size
+						input(type='text' placeholder='15ml ').form-control#price-one
+						input(type='text' placeholder='30ml').form-control#price-two
+						input(type='text' placeholder='50ml').form-control#price-three
+						input(type='text' placeholder='100ml').form-control#price-four
+
 						button.btn.btn-primary#add-ejuice-btn
 							i.fa.fa-plus &nbsp; ADD E-JUICE
 

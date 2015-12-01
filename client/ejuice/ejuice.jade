@@ -1,12 +1,10 @@
 template(name='ejuice')
-	div.container-fluid.text-center.ejuice-div
+	div.text-center.ejuice-div
 		+each ejuice
-			div.thumbnail.grid-thumbnail.text-center.col-xs-10.col-sm-5.col-md-4.col-lg-3.up-animate
+			div.thumbnail.grid-thumbnail.text-center.col-xs-5.col-sm-5.col-md-4.col-lg-3.up-animate
 				img(src='#{url}')
 				div.caption
-				h4.name-h4 #{name} &nbsp; 
-					strong $ #{price}
+				h5.name-h4 #{name} &nbsp; 
 				hr
 				p.desc #{desc}
-				button.btn.btn-material-purple-800.up-animate#add-to-cart-ej 
-					i.fa.fa-plus &nbsp; add to cart
+				

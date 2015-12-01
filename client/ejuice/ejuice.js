@@ -12,19 +12,23 @@ Template.ejuice.rendered = () => {
 		lazyLoad: true
 	});
 	$('#slide-ej-btn').click();
-	$('#slide-ej-btn').focus()
+	$('#slide-ej-btn').focus();
+	//let desc = $('.desc');
+	//desc.text(desc.text().substring(0,10))
 }
 
 Template.ejuice.helpers({
 	ejuice () {
 		return Ejuice.find({})
+	},
+	shortDesc () {
+		//return
 	}
 });
 
 Template.ejuice.events({
 	'click #add-to-cart-ej' () {
 		console.log(this.url);
-		Session.set('ejuice-name', this.name)
 		Meteor.call('insertToCart', this._id, this.name, this.desc, this.url, this.price)
 		Bert.alert({
 				type: 'addThis',
@@ -32,5 +36,12 @@ Template.ejuice.events({
 				message: Session.get('ejuice-name') + ' added to your cart!',
 				icon: 'fa-check'
 			})
-	} 
+	},
+	'click .grid-thumbnail' () {
+		console.log(this.name);
+		Session.setPersistent('ejuice-name', this.name);
+		Session.setPersistent('ejuice-desc', this.desc);
+		Session.setPersistent('ejuice-url', this.url);
+		FlowRouter.go('/ejuice-temp')
+	}
 });

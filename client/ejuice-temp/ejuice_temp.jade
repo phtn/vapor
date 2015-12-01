@@ -1,0 +1,23 @@
+template(name='ejuiceTemp')
+	div.container-fluid.text-center.ejuice-div
+		div.thumbnail.grid-thumbnail-temp.text-center.col-xs-10.col-sm-5.col-md-4.col-lg-3.up-animate
+			img(src='#{url}')
+			div.caption
+			h4.name-h4 #{name} &nbsp; 
+				strong $ #{price}
+			hr
+			p.desc #{desc}
+			hr
+			p.small-label SIZE | 
+				strong ml
+			span.fa-stack.fa-lg
+				i.fa.fa-square-o.fa-stack-2x
+				p.fa-stack-1x.small-number 100
+			hr
+			p.small-label NICOTINE LEVEL ( mg )
+			span.fa-stack.fa-lg
+				i.fa.fa-square-o.fa-stack-2x
+				p.fa-stack-1x.small-number 12
+			hr
+			button.btn.btn-material-purple-800.up-animate#add-to-cart-ej 
+				i.fa.fa-plus &nbsp; add to cart

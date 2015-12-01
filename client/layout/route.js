@@ -22,6 +22,13 @@ FlowRouter.route('/ejuice', {
 	}
 });
 
+FlowRouter.route('/ejuice-temp', {
+	name: "E-Juice-temp",
+	action(params) {
+		renderThisTemplate('ejuiceTemp')
+	}
+});
+
 FlowRouter.route('/cart', {
 	name: 'Cart',
 	action(params) {
