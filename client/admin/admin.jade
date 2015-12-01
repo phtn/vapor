@@ -27,14 +27,23 @@ template(name='admin')
 						input(type='text' placeholder='Description').form-control#desc-ej
 						input(type='text' placeholder='Image URL').form-control#url-ej
 						br
-						p Price per Bottle Size
-						input(type='text' placeholder='15ml ').form-control#price-one
-						input(type='text' placeholder='30ml').form-control#price-two
-						input(type='text' placeholder='50ml').form-control#price-three
-						input(type='text' placeholder='100ml').form-control#price-four
-
 						button.btn.btn-primary#add-ejuice-btn
 							i.fa.fa-plus &nbsp; ADD E-JUICE
+						br
+						p Add Bottle Sizes
+						br
+						input(type='text' placeholder='Bottle size in ml (e.g. 75').form-control#bottle-size-input
+						input(type='text' placeholder='Set Price').form-control#price-input
+						br
+						button.btn.btn-primary#add-bottle-size-btn
+							i.fa.fa-plus &nbsp; ADD BOTTLE SIZE
+						br
+						p Add Nicotine Levels
+						br
+						input(type='text' placeholder='Nicotine Level in mg (e.g. 30').form-control#nicotine-level-input
+						br
+						button.btn.btn-primary#add-nicotine-level-btn
+							i.fa.fa-plus &nbsp; ADD NICOTINE LEVEL
 
 		div.tab-pane.fade#mods-content
 			div.container-fluid.text-center

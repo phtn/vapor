@@ -1,23 +1,31 @@
 template(name='ejuiceTemp')
-	div.container-fluid.text-center.ejuice-div
-		div.thumbnail.grid-thumbnail-temp.text-center.col-xs-10.col-sm-5.col-md-4.col-lg-3.up-animate
+	
+	div.container-fluid.text-center.ejuice-temp-div
+		span.ion-android-arrow-back.pull-left#back-to-ejuice
+		div.col-lg-4.img-name-price
 			img(src='#{url}')
-			div.caption
+			
 			h4.name-h4 #{name} &nbsp; 
 				strong $ #{price}
+			
+		div.col-lg-7.ejuice-widget
+			
+			p.desc-temp #{desc}
 			hr
-			p.desc #{desc}
-			hr
-			p.small-label SIZE | 
+			p.small-label SIZE &nbsp; | &nbsp; 
 				strong ml
-			span.fa-stack.fa-lg
-				i.fa.fa-square-o.fa-stack-2x
-				p.fa-stack-1x.small-number 15
+			+each bottleSizes
+				span.fa-stack.fa-lg.size-btn
+					i.fa.fa-square.fa-stack-2x.i-square
+					p.fa-stack-1x.small-number #{size}
+			
 			hr
-			p.small-label NICOTINE LEVEL ( mg )
-			span.fa-stack.fa-lg
-				i.fa.fa-square-o.fa-stack-2x
-				p.fa-stack-1x.small-number 12
+			p.small-label NICOTINE LEVEL &nbsp; | &nbsp;
+				strong mg
+			+each nicotineLevels
+				span.fa-stack.fa-lg.nic-btn
+					i.fa.fa-square.fa-stack-2x.i-square
+					p.fa-stack-1x.small-number #{level}
 			hr
-			button.btn.btn-material-purple-800.up-animate#add-to-cart-ej 
+			button.btn.btn-material-purple-800.up-animate#add-to-cart-ejuice
 				i.fa.fa-plus &nbsp; add to cart

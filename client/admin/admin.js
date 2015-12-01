@@ -5,17 +5,26 @@ Template.admin.rendered = () => {
 
 Template.admin.events({
 	'click #add-ejuice-btn' () {
-		Meteor.call('insertEjuice', 
+
+		Meteor.call('insertEjuiceFlavor', 
 			$('#name-ej').val(),
 			$('#desc-ej').val(),
-			$('#url-ej').val(),
-			'15 ml', '30 ml', '50 ml', '100 ml',
-			parseFloat($('#price-one').val()),
-			parseFloat($('#price-two').val()),
-			parseFloat($('#price-three').val()),
-			parseFloat($('#price-four').val()),
-			'0 mg', '1.5 mg', '3 mg', '6 mg', 
-			'9 mg', '12 mg', '18 mg', '24 mg' 
-		)
-	} 
+			$('#url-ej').val()
+		);
+		$('#name-ej').val('');
+		$('#desc-ej').val('');
+		$('#url-ej').val('');
+		$('#name-ej').focus()
+	},
+	'click #add-bottle-size-btn' () {
+		Meteor.call('insertBottleSize', $('#bottle-size-input').val(), $('#price-input').val());
+		$('#bottle-size-input').val('');
+		$('#price-input').val('');
+		$('#bottle-size-input').focus()
+	},
+	'click #add-nicotine-level-btn' () {
+		Meteor.call('insertNicotineLevel', $('#nicotine-level-input').val());
+		$('#nicotine-level-input').val('');
+		$('#nicotine-level-input').focus()
+	}
 });
