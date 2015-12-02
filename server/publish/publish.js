@@ -13,7 +13,12 @@ Meteor.publish('showNicotineLevels', ()=> {
 	return NicotineLevels.find({});
 });
 
-//Cart
+// MODS
+Meteor.publish('showMods', ()=> {
+	return Mods.find({});
+});
+
+// CART
 Meteor.publish('showCart', ()=> {
 	return Cart.find({})
 });

@@ -29,6 +29,13 @@ FlowRouter.route('/ejuice-temp', {
 	}
 });
 
+FlowRouter.route('/mods', {
+	name: "Mods",
+	action(params) {
+		renderThisTemplate('mods')
+	}
+});
+
 FlowRouter.route('/cart', {
 	name: 'Cart',
 	action(params) {

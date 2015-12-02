@@ -7,19 +7,22 @@ template(name='admin')
 					a(href='#ejuice-content' data-toggle='tab')#ejuice-ad E-Juice
 				li
 					a(href='#mods-content' data-toggle='tab')#mods-ad MODS
+	// ADMIN TOOLS CONTENT
 	div.tab-content
 		div.tab-pane.fade#ejuice-content
 			div.container-fluid.admin-div
 						ul.nav.nav-tabs.nav-justified.text-center
 							li
-								a(href='#add-content' data-toggle='tab')#add-tab ADD
+								a(href='#add-ejuice-content' data-toggle='tab')#add-tab ADD
 							li
-								a(href='#edit-content' data-toggle='tab')#edit-tab EDIT
+								a(href='#edit-ejuice-content' data-toggle='tab')#edit-tab EDIT
 							li
-								a(href='#remove-content' data-toggle='tab')#remove-tab REMOVE
-			div.tab-content
+								a(href='#remove-ejuice-content' data-toggle='tab')#remove-tab REMOVE
 
-				div.tab-pane.fade#add-content
+			// E-JUICE CONTENT
+			div.tab-content
+				// ADD E-JUICE PANE
+				div.tab-pane.fade#add-ejuice-content
 					div.container-fluid.text-center.ejuice-div-admin
 						p Add E-Juice to Inventory
 						br
@@ -46,7 +49,32 @@ template(name='admin')
 							i.fa.fa-plus &nbsp; ADD NICOTINE LEVEL
 
 		div.tab-pane.fade#mods-content
-			div.container-fluid.text-center
-				h1 Mods
+			div.container-fluid.admin-div
+						ul.nav.nav-tabs.nav-justified.text-center
+							li
+								a(href='#add-mods-content' data-toggle='tab')#add-tab ADD
+							li
+								a(href='#edit-mods-content' data-toggle='tab')#edit-tab EDIT
+							li
+								a(href='#remove-mods-content' data-toggle='tab')#remove-tab REMOVE
+
+			// MODS CONTENT
+			div.tab-content
+				// ADD MODS PANE
+				div.tab-pane.fade#add-mods-content
+					div.container-fluid.text-center.ejuice-div-admin
+						p Add Mods to Inventory
+						br
+						input(type='text' placeholder='Name').form-control#name-mods
+						input(type='text' placeholder='Price').form-control#price-mods
+						input(type='text' placeholder='Description').form-control#desc-mods
+						input(type='text' placeholder='Kit Includes').form-control#kit-mods
+						input(type='text' placeholder='Image URL').form-control#url-mods
+						br
+						button.btn.btn-primary#add-mods-btn
+							i.fa.fa-plus &nbsp; ADD MOD
+
+
+
 
 		

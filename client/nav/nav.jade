@@ -8,13 +8,13 @@ template(name='nav')
 				ul.nav.nav-tabs.nav-justified.lg-screen
 					li#home
 						a(href='/home').btn.btn-default.btn-flat.links
-							i.fa.fa-home &nbsp; HOME
+							span.ion-ios-home &nbsp; HOME
 					li#e-juice
 						a(href='/ejuice').btn.btn-default.btn-flat.links
-							i.fa.fa-flask &nbsp;  E - JUICE
+							span.ion-waterdrop &nbsp;  E - JUICE
 					li
-						a.btn.btn-default.btn-flat.links
-							i.fa.fa-tablet#mods &nbsp;  MODS
+						a(href='/mods').btn.btn-default.btn-flat.links
+							span.ion-ios-gear#mods &nbsp;  MODS
 					li
 						a.btn.btn-default.btn-flat.links
 							i.fa.fa-question-circle#faq &nbsp;  FAQ
@@ -48,7 +48,7 @@ template(name='nav')
 									span E-JUICE
 							hr
 							li
-								a(href='#')
+								a(href='/mods')
 									span
 										i.fa.fa-tablet
 									span MODS

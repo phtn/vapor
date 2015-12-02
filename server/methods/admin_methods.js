@@ -19,5 +19,15 @@ Meteor.methods({
 			level: level,
 			createdAt: new Date()
 		})
+	},
+	insertMod (name, price, desc, kit, url) {
+		Mods.insert({
+			name: name,
+			price: price,
+			desc: desc,
+			kit: kit,
+			url: url,
+			createdAt: new Date()
+		})
 	}
 });
