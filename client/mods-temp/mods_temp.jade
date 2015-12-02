@@ -1,0 +1,21 @@
+template(name='modsTemp')
+	
+	div.container-fluid.text-center.mods-temp-div
+		
+		div.col-lg-3.img-name-price
+			span.ion-android-arrow-back.pull-left#back-to-mods
+			img(src='#{url}' style='width:60%; height:60%')
+			
+			h4.name-h4 #{name} &nbsp; 
+				strong $ #{price}
+			hr
+		div.col-lg-5.mods-widget
+			
+			p DESCRIPTION
+			p.desc-temp #{desc}
+			hr
+			p KIT INCLUDES
+			p.desc-temp #{kit}
+			hr
+			button.btn.btn-material-purple-800.up-animate#add-to-cart-mod
+				i.fa.fa-plus &nbsp; add to cart

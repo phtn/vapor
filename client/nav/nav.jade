@@ -23,7 +23,7 @@ template(name='nav')
 							i.fa.fa-facebook-square#social &nbsp;  SOCIAL
 					li
 						a(href='/cart').btn.btn-default.btn-flat.links
-							i.fa.fa-shopping-cart#cart &nbsp;  CART
+							i.ion-ios-cart#cart &nbsp;  CART
 							span.badge.badge-default #{countCart}
 					li
 						a.btn.btn-default.btn-flat.links
@@ -33,24 +33,24 @@ template(name='nav')
 						a(href='bootstrap-elements.html' data-toggle='dropdown').dropdown-toggle.btn.btn-default.btn-flat.links#menu
 							//span MENU
 							span
-								i.ion-navicon-round.menu-icon
+								i.ion-navicon.menu-icon
 						ul(arialabelledby='menu').dropdown-menu
 							li
 								a(href='/home')
 									span
-										i.fa.fa-home
+										i.ion-ios-home
 									span HOME
 							hr
 							li
 								a(href='/ejuice')
 									span
-										i.fa.fa-flask
+										i.ion-waterdrop
 									span E-JUICE
 							hr
 							li
 								a(href='/mods')
 									span
-										i.fa.fa-tablet
+										i.ion-ios-gear
 									span MODS
 							hr
 							li
@@ -68,7 +68,7 @@ template(name='nav')
 							li
 								a(href='/cart')
 									span
-										i.fa.fa-shopping-cart
+										i.ion-ios-cart
 									span CART
 									span.badge.badge-default #{countCart}
 							hr

@@ -36,6 +36,13 @@ FlowRouter.route('/mods', {
 	}
 });
 
+FlowRouter.route('/mods-temp', {
+	name: "Mods-temp",
+	action(params) {
+		renderThisTemplate('modsTemp')
+	}
+});
+
 FlowRouter.route('/cart', {
 	name: 'Cart',
 	action(params) {

@@ -8,6 +8,12 @@ Template.mods.helpers({
 
 Template.mods.events({
 	'click .grid-thumbnail' () {
-		console.log(this.name)
+		Session.setPersistent('id-mod', this._id);
+		Session.setPersistent('name-mod',this.name);
+		Session.setPersistent('price-mod',this.price);
+		Session.setPersistent('desc-mod',this.desc);
+		Session.setPersistent('kit-mod',this.kit);
+		Session.setPersistent('url-mod',this.url);
+		FlowRouter.go('/mods-temp')
 	}
 })

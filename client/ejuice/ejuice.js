@@ -38,7 +38,7 @@ Template.ejuice.events({
 			})
 	},
 	'click .grid-thumbnail' () {
-		console.log(this.name);
+		Session.setPersistent('ejuice-id', this._id);
 		Session.setPersistent('ejuice-name', this.name);
 		Session.setPersistent('ejuice-desc', this.desc);
 		Session.setPersistent('ejuice-url', this.url);
