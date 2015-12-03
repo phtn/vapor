@@ -3,7 +3,7 @@ template(name='nav')
 		div.container-fluid
 			div.navbar-header
 				a(href='/home').navbar-brand.withoutripple
-					img(alt='Brand' width='200' height='auto' src='/assets/img/vaportimme-logo-purple-green.png')
+					img(alt='Brand' width='200' height='auto' src='/assets/img/vaportimme-logo-purple-green.png' onload='this.style.opacity="1"')
 				
 				ul.nav.nav-tabs.nav-justified.lg-screen
 					li#home
@@ -12,22 +12,22 @@ template(name='nav')
 					li#e-juice
 						a(href='/ejuice').btn.btn-default.btn-flat.links
 							span.ion-waterdrop &nbsp;  E - JUICE
-					li
+					li#mods
 						a(href='/mods').btn.btn-default.btn-flat.links
-							span.ion-ios-gear#mods &nbsp;  MODS
-					li
+							span.ion-ios-gear &nbsp;  MODS
+					li#trims
 						a.btn.btn-default.btn-flat.links
-							span.ion-bag#faq &nbsp;  TRIMS
-					li
+							span.ion-bag &nbsp;  TRIMS
+					li#visit
 						a.btn.btn-default.btn-flat.links
-							i.fa.fa-facebook-square#social &nbsp;  SOCIAL
-					li
+							span.ion-location &nbsp;  VISIT US
+					li#cart
 						a(href='/cart').btn.btn-default.btn-flat.links
-							span.ion-ios-cart#cart &nbsp;  CART
+							span.ion-ios-cart &nbsp;  CART
 							span.badge.badge-default #{countCart}
-					li
+					li#sign-in
 						a.btn.btn-default.btn-flat.links
-							i.fa.fa-user#sign-in &nbsp;  SIGN IN
+							i.fa.fa-user &nbsp;  SIGN IN
 				ul.nav.nav-tabs.nav-justified.mobile-screen
 					li.pull-right
 						a(href='bootstrap-elements.html' data-toggle='dropdown').dropdown-toggle.btn.btn-default.btn-flat.links#menu

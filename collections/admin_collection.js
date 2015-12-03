@@ -3,3 +3,5 @@ BottleSizes = new Mongo.Collection('bottles');
 NicotineLevels = new Mongo.Collection('nicLevs');
 
 Mods = new Mongo.Collection('mods');
+
+Trims = new Mongo.Collection('trims');
