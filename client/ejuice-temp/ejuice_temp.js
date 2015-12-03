@@ -56,11 +56,21 @@ Template.ejuiceTemp.events({
 	},
 	'click .size-btn' () {
 		Session.setPersistent('ejuice-price', this.price)
+		Session.setPersistent('ejuice-size',this.size)
 	},
 	'click .nic-btn' () {
-		Session.setPersistent('nicotine-level', this.level)
+		Session.setPersistent('ejuice-nicotine-level', this.level)
 	},
 	'click #add-to-cart-ejuice' () {
+		Meteor.call('addEjuiceToCart', 
+			Session.get('ejuice-id'), 
+			Session.get('ejuice-name'), 
+			Session.get('ejuice-price'), 
+			Session.get('ejuice-url'), 
+			Session.get('ejuice-size'), 
+			Session.get('ejuice-nicotine-level'), 
+			'ion-waterdrop');
+
 		Bert.alert({
 		  type: 'add-to-cart-ejuice',
 		  message: 'Successfully added to cart!',
