@@ -1,6 +1,11 @@
 function renderThisTemplate(template) {
-	BlazeLayout.render('layout', {nav: "nav", body: template})
+	BlazeLayout.render('layout', {nav: 'nav', body: template})
 }
+
+function accessAdmin(template) {
+	BlazeLayout.render('admin-layout', {nav: 'admin-nav', body: template})
+}
+
 FlowRouter.route('/', {
 	name: "Landing",
 	action(params) {
@@ -53,6 +58,6 @@ FlowRouter.route('/cart', {
 FlowRouter.route('/admin', {
 	name: 'Admin',
 	action(params) {
-		renderThisTemplate('admin')
+		accessAdmin('admin')
 	}
 });

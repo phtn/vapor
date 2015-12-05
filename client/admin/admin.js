@@ -1,3 +1,5 @@
+Meteor.subscribe('showAdmin')
+
 Template.admin.rendered = () => {
 	$('#ejuice-ad').click()
 	$('#add-content').click()

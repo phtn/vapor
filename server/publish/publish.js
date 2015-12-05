@@ -1,3 +1,8 @@
+// ADMIN
+Meteor.publish('showAdmin', () => {
+	return Administrators.find({})
+});
+
 // E - JUICE
 Meteor.publish('showEjuice', ()=> {
 	return Ejuice.find({})

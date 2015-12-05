@@ -16,12 +16,12 @@ template(name='cart')
 	if cartNotEmpty
 
 		div.container-fluid.total-div.text-center.up-animate
-			p
+			p.total-label
 				span.pull-left Subtotal:  
 				span.pull-right
 					strong $ #{subtotal}
 			br
-			p
+			p.total-label
 				span.pull-left Tax (8%):  
 				span.pull-right
 					strong $ #{tax}

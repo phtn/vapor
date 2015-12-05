@@ -21,12 +21,9 @@ Template.ejuiceTemp.rendered = ()=> {
 	    $(this).addClass(highlight);
 	});
 	
-	if (Session.get('ejuice-price') == 13.99) {
-		$('.size-btn').first().click();
-	}
-	if (Session.get('nicotine-level') === '0') {
-		$('.nic-btn').first().click();
-	}
+	$('.size-btn').first().click();
+	$('.nic-btn').first().click();
+	
 }
 
 Template.ejuiceTemp.helpers({
