@@ -10,17 +10,22 @@ Meteor.publish('showEjuice', ()=> {
 
 // BOTTLE SIZES
 Meteor.publish('showBottleSizes', ()=> {
-	return BottleSizes.find({});
+	return BottleSizes.find({})
 });
 
 // NICOTINE LEVELS
 Meteor.publish('showNicotineLevels', ()=> {
-	return NicotineLevels.find({});
+	return NicotineLevels.find({})
 });
 
 // MODS
 Meteor.publish('showMods', ()=> {
-	return Mods.find({});
+	return Mods.find({})
+});
+
+// TRIMS
+Meteor.publish('showTrims', ()=> {
+	return Trims.find({})
 });
 
 // CART

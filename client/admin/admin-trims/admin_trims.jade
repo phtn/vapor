@@ -1,0 +1,67 @@
+template(name='adminTrims')
+	div.container-fluid.text-center.admin-body-div
+
+		// ADD
+		div.col-lg-4
+			div.panel.panel-info
+				div.panel-heading
+					h5.panel-title 
+						span.ion-plus-round
+						span ADD
+				div.panel-body
+					div.module-div
+						p Add Trims to Store
+						br
+						input(type='text' placeholder='Name').form-control#trim-name
+						input(type='text' placeholder='Description').form-control#trim-desc
+						input(type='text' placeholder='Kit Includes').form-control#trim-kit
+						input(type='text' placeholder='Image file').form-control#trim-url
+						input(type='text' placeholder='Set Price').form-control#trim-price
+						br
+						button.btn.btn-info#add-trim-btn
+							span.ion-plus-round &nbsp; ADD TRIM
+					
+
+		// EDIT
+		div.col-lg-4
+			div.panel.panel-primary
+				div.panel-heading
+					h5.panel-title 
+						span.ion-edit
+						span EDIT
+				div.panel-body
+					div.module-div
+							p Edit Trim Info
+							br
+							input(type='text' placeholder='Name').form-control#edit-trim-name
+							input(type='text' placeholder='Description').form-control#edit-trim-desc
+							input(type='text' placeholder='Kit Includes').form-control#edit-trim-kit
+							input(type='text' placeholder='Image file').form-control#edit-trim-url
+							input(type='text' placeholder='Set Price').form-control#edit-trim-price
+							br
+							button.btn.btn-primary#prev-trim-btn
+								span.ion-ios-arrow-back
+							button.btn.btn-primary#save-trim-btn SAVE
+							button.btn.btn-primary#next-trim-btn
+								span.ion-ios-arrow-forward
+					
+		// REMOVE
+		div.col-lg-4
+			div.panel.panel-danger
+				div.panel-heading
+					h5.panel-title 
+						span.ion-close-round
+						span REMOVE
+				div.panel-body
+					div.module-div
+						p Trims List &nbsp; ( #{trimCount} items )
+						br
+						+each trim
+							div.ejuice-remove-list
+								span.pull-left $ #{price} &nbsp;&nbsp;
+								span.pull-left #{name}
+								span.pull-right#remove-trim-admin-list
+									i.fa.fa-trash-o
+								br
+					
+
