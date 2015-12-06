@@ -55,5 +55,11 @@ Meteor.methods({
 	},
 	removeEjuiceAdmin (id) {
 		Ejuice.remove({_id: id})
+	},
+	removeSizeAdmin (id) {
+		BottleSizes.remove({_id: id})
+	},
+	removeNicAdmin (id) {
+		NicotineLevels.remove({_id: id})
 	}
 });

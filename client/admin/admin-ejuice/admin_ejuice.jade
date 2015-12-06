@@ -86,10 +86,31 @@ template(name='adminEjuice')
 						span.ion-close-round
 						span REMOVE
 				div.panel-body
+					//EJUICE
 					div.module-div
 						+each ejuice
 							div.ejuice-remove-list
 								span.pull-left #{name}
 								span.pull-right#remove-ejuice-admin-list
 									i.fa.fa-trash-o
-							br
+								br
+					hr
+					// BOTTLE SIZE
+					div.module-div
+						+each sizes
+							div.ejuice-remove-list
+								span.pull-left #{size}ml &nbsp;&nbsp;&nbsp;
+								span.pull-left $ #{price}
+								span.pull-right#remove-size-admin-list
+									i.fa.fa-trash-o
+								br
+					hr
+					// NICOTINE LEVEL
+					div.module-div
+						+each nic
+							div.ejuice-remove-list
+								span.pull-left #{level}mg
+								span.pull-right#remove-nic-admin-list
+									i.fa.fa-trash-o
+								br
+

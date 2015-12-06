@@ -117,7 +117,34 @@ Template.adminEjuice.events({
 		});
 	},
 	'click #remove-ejuice-admin-list' () {
-		Meteor.call('removeEjuiceAdmin', this._id)
+		// Remove Ejuice
+		Meteor.call('removeEjuiceAdmin', this._id);
+		Bert.alert({
+		  type: 'admin-remove',
+		  message: 'Ejuice Removed!',
+		  style: 'growl-top-right',
+		  icon: 'ion-close-round'
+		});
+	},
+	'click #remove-size-admin-list' () {
+		// Remove Size
+		Meteor.call('removeSizeAdmin', this._id)
+		Bert.alert({
+		  type: 'admin-remove',
+		  message: 'Bottle Size Removed!',
+		  style: 'growl-top-right',
+		  icon: 'ion-close-round'
+		});
+	},
+	'click #remove-nic-admin-list' () {
+		// Remove Nic Level
+		Meteor.call('removeNicAdmin', this._id)
+		Bert.alert({
+		  type: 'admin-remove',
+		  message: 'Nicotine Level Removed!',
+		  style: 'growl-top-right',
+		  icon: 'ion-close-round'
+		});
 	}
 });
 
@@ -125,6 +152,12 @@ Template.adminEjuice.events({
 Template.adminEjuice.helpers({
 	ejuice () {
 		return Ejuice.find({})
+	},
+	sizes () {
+		return BottleSizes.find({})
+	},
+	nic () {
+		return NicotineLevels.find({})
 	}
 });
 
