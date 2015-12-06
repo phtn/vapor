@@ -29,5 +29,14 @@ Meteor.methods({
 			url: url,
 			createdAt: new Date()
 		})
+	},
+	updateEjuice (id, name, desc, url) {
+		Ejuice.update({_id: id}, 
+		{$set: {
+			name: name,
+			desc: desc,
+			url: url
+			}
+		})
 	}
 });

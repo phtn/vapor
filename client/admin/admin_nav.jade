@@ -1,11 +1,20 @@
-template(name='admin-nav')
+template(name='adminNav')
 	nav.navbar.navbar-default.navbar-fixed-top.shadow-z-1
 		div.container-fluid
 			div.navbar-header
 				a(href='/home').navbar-brand.withoutripple
-					img(alt='Brand' width='200' height='auto' src='/assets/img/vaportimme-logo-purple-green.png' onload='this.style.opacity="1"')
+					img(alt='Brand' width='200' height='auto' src='/assets/img/vaportimme-logo-purple-green.png')
 
-				ul.nav.nav-tabs.nav-justified.lg-screen
+				// LOG IN
+				ul.nav.nav-tabs.login-admin-nav
+					li.pull-right#admin-login
+						a.btn.btn-primary.btn-flat.links 
+							span LOGIN
+							
+					
+
+				// LOGGED IN
+				ul.nav.nav-tabs.nav-justified.auth-admin-nav
 					li#admin-ejuice
 						a.btn.btn-default.btn-flat.links
 							span.ion-waterdrop &nbsp; E - JUICE
@@ -18,3 +27,4 @@ template(name='admin-nav')
 					li#admin-orders
 						a.btn.btn-default.btn-flat.links
 							span.ion-clipboard &nbsp;  ORDERS
+

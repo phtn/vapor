@@ -3,7 +3,7 @@ function renderThisTemplate(template) {
 }
 
 function accessAdmin(template) {
-	BlazeLayout.render('admin-layout', {nav: 'admin-nav', body: template})
+	BlazeLayout.render('admin-layout', {nav: 'adminNav', body: template})
 }
 
 FlowRouter.route('/', {
@@ -55,9 +55,3 @@ FlowRouter.route('/cart', {
 	}
 });
 
-FlowRouter.route('/admin', {
-	name: 'Admin',
-	action(params) {
-		accessAdmin('admin')
-	}
-});

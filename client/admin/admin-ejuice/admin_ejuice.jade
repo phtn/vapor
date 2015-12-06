@@ -1,0 +1,69 @@
+template(name='adminEjuice')
+	div.container-fluid.text-center.admin-body-div
+
+		// ADD
+		div.col-lg-4
+			div.panel.panel-info
+				div.panel-heading
+					h5.panel-title 
+						span.ion-plus-round
+						span ADD
+				div.panel-body
+					div.module-div.shadow-z-1
+						p Add E-Juice to Inventory
+						br
+						input(type='text' placeholder='Name').form-control#name-ej
+						input(type='text' placeholder='Description').form-control#desc-ej
+						input(type='text' placeholder='Image URL').form-control#url-ej
+						br
+						button.btn.btn-info#add-ejuice-btn
+							i.fa.fa-plus &nbsp; ADD E-JUICE
+					hr
+					div.module-div
+						p Add Bottle Sizes
+						br
+						input(type='text' placeholder='Bottle size in ml ( e.g. 75 )').form-control#bottle-size-input
+						input(type='text' placeholder='Set Price').form-control#price-input
+						br
+						button.btn.btn-info#add-bottle-size-btn
+							i.fa.fa-plus &nbsp; ADD BOTTLE SIZE
+					hr
+					div.module-div
+						p Add Nicotine Levels
+						br
+						input(type='text' placeholder='Nicotine Level in mg ( e.g. 30 )').form-control#nicotine-level-input
+						br
+						button.btn.btn-info#add-nicotine-level-btn
+							i.fa.fa-plus &nbsp; ADD NICOTINE LEVEL
+
+		// EDIT
+		div.col-lg-4
+			div.panel.panel-primary
+				div.panel-heading
+					h5.panel-title 
+						span.ion-edit
+						span EDIT
+				div.panel-body
+					div.module-div
+							p Edit E-Juice Info
+							br
+							input(type='text' placeholder='Name').form-control#edit-ejuice-name
+							input(type='text' placeholder='Description').form-control#edit-ejuice-desc
+							input(type='text' placeholder='Image URL').form-control#edit-ejuice-url
+							br
+							button.btn.btn-primary#prev-ejuice-btn
+								span.ion-ios-arrow-back
+							button.btn.btn-primary#save-ejuice-btn SAVE
+							button.btn.btn-primary#next-ejuice-btn
+								span.ion-ios-arrow-forward
+							p #{test.name}
+						hr
+
+		// REMOVE
+		div.col-lg-4
+			div.panel.panel-danger
+				div.panel-heading
+					h5.panel-title 
+						span.ion-close-round
+						span REMOVE
+				div.panel-body
