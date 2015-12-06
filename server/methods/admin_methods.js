@@ -3,21 +3,24 @@ Meteor.methods({
 		Ejuice.insert({
 			name: name.toUpperCase(),
 			desc: desc,
-			url: url,
-			createdAt: new Date()
+			url: '/assets/img/ejuice/' + url,
+			createdAt: new Date(),
+			editedAt: new Date()
 		});
 	},
 	insertBottleSize (size, price, i, p) {
 		BottleSizes.insert({
 			size: size,
 			price: parseFloat(price),
-			createdAt: new Date()
+			createdAt: new Date(),
+			editedAt: new Date()
 		})
 	},
 	insertNicotineLevel (level) {
 		NicotineLevels.insert({
 			level: level,
-			createdAt: new Date()
+			createdAt: new Date(),
+			editedAt: new Date()
 		})
 	},
 	insertMod (name, price, desc, kit, url) {
@@ -26,17 +29,31 @@ Meteor.methods({
 			price: price,
 			desc: desc,
 			kit: kit,
-			url: url,
-			createdAt: new Date()
+			url: '/assets/img/ejuice/' + url,
+			createdAt: new Date(),
+			editedAt: new Date
 		})
 	},
-	updateEjuice (id, name, desc, url) {
+	updateEjuice (id, name, desc, url, editedAt) {
 		Ejuice.update({_id: id}, 
 		{$set: {
 			name: name,
 			desc: desc,
-			url: url
+			url: '/assets/img/ejuice/' + url,
+			editedAt: editedAt
 			}
 		})
+	},
+	updateSizePrice(id, size, price, editedAt) {
+		BottleSizes.update({_id: id},
+		{$set: {
+			size: size,
+			price: price,
+			editedAt: editedAt
+			}
+		})
+	},
+	removeEjuiceAdmin (id) {
+		Ejuice.remove({_id: id})
 	}
 });

@@ -9,12 +9,12 @@ template(name='adminEjuice')
 						span.ion-plus-round
 						span ADD
 				div.panel-body
-					div.module-div.shadow-z-1
+					div.module-div
 						p Add E-Juice to Inventory
 						br
 						input(type='text' placeholder='Name').form-control#name-ej
 						input(type='text' placeholder='Description').form-control#desc-ej
-						input(type='text' placeholder='Image URL').form-control#url-ej
+						input(type='text' placeholder='Image file').form-control#url-ej
 						br
 						button.btn.btn-info#add-ejuice-btn
 							i.fa.fa-plus &nbsp; ADD E-JUICE
@@ -44,21 +44,40 @@ template(name='adminEjuice')
 						span.ion-edit
 						span EDIT
 				div.panel-body
+					// INFO
 					div.module-div
 							p Edit E-Juice Info
 							br
 							input(type='text' placeholder='Name').form-control#edit-ejuice-name
 							input(type='text' placeholder='Description').form-control#edit-ejuice-desc
-							input(type='text' placeholder='Image URL').form-control#edit-ejuice-url
+							input(type='text' placeholder='Image file').form-control#edit-ejuice-url
 							br
 							button.btn.btn-primary#prev-ejuice-btn
 								span.ion-ios-arrow-back
 							button.btn.btn-primary#save-ejuice-btn SAVE
 							button.btn.btn-primary#next-ejuice-btn
 								span.ion-ios-arrow-forward
-							p #{test.name}
 						hr
-
+					// SIZES
+					div.module-div
+							p Edit Bottle Size & Price
+							br
+							div.col-md-2
+								label(for='edit-bottle-size').control-label Size
+							div.col-md-10
+								input(type='text' placeholder='Name').form-control#edit-bottle-size
+							br
+							div.col-md-2
+								label(for='edit-bottle-price').control-label Price
+							div.col-md-10
+								input(type='text' placeholder='Description').form-control#edit-bottle-price
+							br
+							button.btn.btn-primary#prev-size-btn
+								span.ion-ios-arrow-back
+							button.btn.btn-primary#save-size-btn SAVE
+							button.btn.btn-primary#next-size-btn
+								span.ion-ios-arrow-forward
+						hr
 		// REMOVE
 		div.col-lg-4
 			div.panel.panel-danger
@@ -67,3 +86,10 @@ template(name='adminEjuice')
 						span.ion-close-round
 						span REMOVE
 				div.panel-body
+					div.module-div
+						+each ejuice
+							div.ejuice-remove-list
+								span.pull-left #{name}
+								span.pull-right#remove-ejuice-admin-list
+									i.fa.fa-trash-o
+							br

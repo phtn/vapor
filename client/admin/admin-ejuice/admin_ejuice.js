@@ -18,7 +18,6 @@ Template.adminEjuice.events({
 		  style: 'growl-top-right',
 		  icon: 'ion-plus-round'
 		});
-
 	},
 	'click #add-bottle-size-btn' () {
 		// Insert Bottle Size
@@ -50,27 +49,27 @@ Template.adminEjuice.events({
 		});
 	},
 	'click #next-ejuice-btn' () {
-		var ejNext = Ejuice.find({createdAt: {$gt: Session.get('current-ejuice-doc')}}, {sort: {createdAt: 1}, limit: 1});
+		var ejDoc = Ejuice.find({createdAt: {$gt: Session.get('current-ejuice-date')}}, {sort: {createdAt: 1}, limit: 1});
 
-		ejNext.forEach((doc)=> {
+		ejDoc.forEach((doc)=> {
 			$('#edit-ejuice-name').val(doc.name)
 			$('#edit-ejuice-desc').val(doc.desc)
 			$('#edit-ejuice-url').val(doc.url)
 			Session.setPersistent('current-ejuice-name', doc.name)
-			Session.setPersistent('current-ejuice-doc', doc.createdAt)
+			Session.setPersistent('current-ejuice-date', doc.createdAt)
 			Session.setPersistent('current-ejuice-id', doc._id)
 		});
 		//console.log('test')
 	},
 	'click #prev-ejuice-btn' () {
-		var ejNext = Ejuice.find({createdAt: {$lt: Session.get('current-ejuice-doc')}}, {sort: {createdAt: -1}, limit: 1});
+		var ejDoc = Ejuice.find({createdAt: {$lt: Session.get('current-ejuice-date')}}, {sort: {createdAt: -1}, limit: 1});
 
-		ejNext.forEach((doc)=> {
+		ejDoc.forEach((doc)=> {
 			$('#edit-ejuice-name').val(doc.name)
 			$('#edit-ejuice-desc').val(doc.desc)
 			$('#edit-ejuice-url').val(doc.url)
 			Session.setPersistent('current-ejuice-name', doc.name)
-			Session.setPersistent('current-ejuice-doc', doc.createdAt)
+			Session.setPersistent('current-ejuice-date', doc.createdAt)
 			Session.setPersistent('current-ejuice-id', doc._id)
 		});
 		//console.log('test')
@@ -85,15 +84,47 @@ Template.adminEjuice.events({
 		  style: 'growl-top-right',
 		  icon: 'ion-checkmark-round'
 		});
+	},
+	'click #prev-size-btn' () {
+		var sizeDoc = BottleSizes.find({createdAt: {$lt: Session.get('current-size-date')}}, {sort: {createdAt: -1}, limit: 1})
+	
+		sizeDoc.forEach((doc)=> {
+			$('#edit-bottle-size').val(doc.size);
+			$('#edit-bottle-price').val(doc.price);
+			Session.setPersistent('current-size-date', doc.createdAt)
+			Session.setPersistent('current-size-id', doc._id)
+		})
+	},
+	'click #next-size-btn' () {
+		var sizeDoc = BottleSizes.find({createdAt: {$gt: Session.get('current-size-date')}}, {sort: {createdAt: 1}, limit: 1})
+	
+		sizeDoc.forEach((doc)=> {
+			$('#edit-bottle-size').val(doc.size);
+			$('#edit-bottle-price').val(doc.price);
+			Session.setPersistent('current-size-date', doc.createdAt)
+			Session.setPersistent('current-size-id', doc._id)
+		})
+	},
+	'click #save-size-btn' () {
+		// Update Size & Price
+		Meteor.call('updateSizePrice', Session.get('current-size-id'), $('#edit-bottle-size').val(), $('#edit-bottle-price').val())
+		// Alert Notification
+		Bert.alert({
+		  type: 'admin-edit',
+		  message: 'Update Successful!',
+		  style: 'growl-top-right',
+		  icon: 'ion-checkmark-round'
+		});
+	},
+	'click #remove-ejuice-admin-list' () {
+		Meteor.call('removeEjuiceAdmin', this._id)
 	}
 });
 
 
 Template.adminEjuice.helpers({
-	next () {
-		
-
-
+	ejuice () {
+		return Ejuice.find({})
 	}
 });
 
@@ -101,11 +132,20 @@ Template.adminEjuice.rendered = ()=> {
 	var ej = Ejuice.find({}, {sort: {createdAt: 1}, limit: 1});
 
 	ej.forEach((first)=>{
-		Session.setPersistent('current-ejuice-doc', first.createdAt)
+		Session.setPersistent('current-ejuice-date', first.createdAt)
 		$('#edit-ejuice-name').val(first.name)
 		$('#edit-ejuice-desc').val(first.desc)
 		$('#edit-ejuice-url').val(first.url)
 		Session.setPersistent('current-ejuice-name', first.name)
 		Session.setPersistent('current-ejuice-id', first._id)
-	})
+	});
+
+	var sizes = BottleSizes.find({}, {sort: {createdAt: 1}, limit: 1});
+
+	sizes.forEach((first)=> {
+		Session.setPersistent('current-size-date', first.createdAt)
+		Session.setPersistent('current-size-id', first._id)
+		$('#edit-bottle-size').val(first.size)
+		$('#edit-bottle-price').val(first.price)
+	});
 }
