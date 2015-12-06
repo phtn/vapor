@@ -76,7 +76,7 @@ Template.adminEjuice.events({
 	},
 	'click #save-ejuice-btn' () {
 		// Update edit
-		Meteor.call('updateEjuice', Session.get('current-ejuice-id'), $('#edit-ejuice-name').val(), $('#edit-ejuice-desc').val(), $('#edit-ejuice-url').val(), )
+		Meteor.call('updateEjuice', Session.get('current-ejuice-id'), $('#edit-ejuice-name').val(), $('#edit-ejuice-desc').val(), $('#edit-ejuice-url').val())
 		// Alert Notification
 		Bert.alert({
 		  type: 'admin-edit',

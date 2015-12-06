@@ -88,6 +88,8 @@ template(name='adminEjuice')
 				div.panel-body
 					//EJUICE
 					div.module-div
+						p E-Juice Flavors
+						br
 						+each ejuice
 							div.ejuice-remove-list
 								span.pull-left #{name}
@@ -97,6 +99,8 @@ template(name='adminEjuice')
 					hr
 					// BOTTLE SIZE
 					div.module-div
+						p Bottle Size & Price
+						br
 						+each sizes
 							div.ejuice-remove-list
 								span.pull-left #{size}ml &nbsp;&nbsp;&nbsp;
@@ -107,6 +111,8 @@ template(name='adminEjuice')
 					hr
 					// NICOTINE LEVEL
 					div.module-div
+						p Nicotine Levels
+						br
 						+each nic
 							div.ejuice-remove-list
 								span.pull-left #{level}mg

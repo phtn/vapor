@@ -23,23 +23,12 @@ Meteor.methods({
 			editedAt: new Date()
 		})
 	},
-	insertMod (name, price, desc, kit, url) {
-		Mods.insert({
-			name: name,
-			price: price,
-			desc: desc,
-			kit: kit,
-			url: '/assets/img/ejuice/' + url,
-			createdAt: new Date(),
-			editedAt: new Date
-		})
-	},
 	updateEjuice (id, name, desc, url, editedAt) {
 		Ejuice.update({_id: id}, 
 		{$set: {
 			name: name,
 			desc: desc,
-			url: '/assets/img/ejuice/' + url,
+			url: url,
 			editedAt: editedAt
 			}
 		})

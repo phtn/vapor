@@ -1,0 +1,68 @@
+template(name='adminMods')
+	div.container-fluid.text-center.admin-body-div
+
+		// ADD
+		div.col-lg-4
+			div.panel.panel-info
+				div.panel-heading
+					h5.panel-title 
+						span.ion-plus-round
+						span ADD
+				div.panel-body
+					div.module-div
+						p Add Mods to Store
+						br
+						input(type='text' placeholder='Name').form-control#name-mod
+						input(type='text' placeholder='Description').form-control#desc-mod
+						input(type='text' placeholder='Kit Includes').form-control#kit-mod
+						input(type='text' placeholder='Image file').form-control#url-mod
+						input(type='text' placeholder='Set Price').form-control#price-mod
+						br
+						button.btn.btn-info#add-mod-btn
+							span.ion-plus-round &nbsp; ADD MOD
+					
+
+		// EDIT
+		div.col-lg-4
+			div.panel.panel-primary
+				div.panel-heading
+					h5.panel-title 
+						span.ion-edit
+						span EDIT
+				div.panel-body
+					div.module-div
+							p Edit Mod Info
+							br
+							input(type='text' placeholder='Name').form-control#edit-mod-name
+							input(type='text' placeholder='Description').form-control#edit-mod-desc
+							input(type='text' placeholder='Kit Includes').form-control#edit-mod-kit
+							input(type='text' placeholder='Image file').form-control#edit-mod-url
+							input(type='text' placeholder='Set Price').form-control#edit-mod-price
+							br
+							button.btn.btn-primary#prev-mod-btn
+								span.ion-ios-arrow-back
+							button.btn.btn-primary#save-mod-btn SAVE
+							button.btn.btn-primary#next-mod-btn
+								span.ion-ios-arrow-forward
+					
+		// REMOVE
+		div.col-lg-4
+			div.panel.panel-danger
+				div.panel-heading
+					h5.panel-title 
+						span.ion-close-round
+						span REMOVE
+				div.panel-body
+					//EJUICE
+					div.module-div
+						p Mods List &nbsp; ( #{modCount} items )
+						br
+						+each mod
+							div.ejuice-remove-list
+								span.pull-left $ #{price} &nbsp;&nbsp;
+								span.pull-left #{name}
+								span.pull-right#remove-mod-admin-list
+									i.fa.fa-trash-o
+								br
+					
+
