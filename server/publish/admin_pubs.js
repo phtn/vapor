@@ -9,9 +9,17 @@ Meteor.publish('showEjuiceImages', ()=> {
 });
 // MODS
 Meteor.publish('showMods', ()=> {
-	return Mods.find({})
+	return Mods.find()
 });
 // MODS IMAGES
 Meteor.publish('showModsImages', ()=> {
-	return ModsImages.find({})
+	return ModsImages.find()
+});
+// TRIMS
+Meteor.publish('showTrims', ()=> {
+	return Trims.find()
+});
+// TRIMS IMAGES
+Meteor.publish('showTrimsImages', ()=> {
+	return TrimsImages.find()
 });

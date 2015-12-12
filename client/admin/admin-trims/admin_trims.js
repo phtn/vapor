@@ -1,4 +1,26 @@
-Meteor.subscribe('showTrims');
+AutoForm.hooks({
+ 	insertTrimForm: { // autoform id
+	   	after: {
+	     	insert (error, result, template) {
+		      	insertedFile = Trims.findOne(result).imgId;
+		      	ModsImages.update({_id: insertedFile}, {$set: {'trimId': result}});
+	      	
+	      	// Alert notification
+				Bert.alert({
+					type: 'admin-add',
+					message: 'Trim added to store.',
+					style: 'growl-top-right',
+					icon: 'ion-plus-round'
+				});
+	     	}
+	   	}
+ 	}
+});
+
+Meteor.subscribe('showMods');
+Meteor.subscribe('showModsImages');
+
+
 Template.adminTrims.rendered = ()=> {
 	var trimDoc = Trims.find({}, {sort: {createdAt: 1}, limit: 1});
 
@@ -15,30 +37,7 @@ Template.adminTrims.rendered = ()=> {
 }
 
 Template.adminTrims.events({
-	'click #add-trim-btn' () {
-		// Insert to Trims
-		Meteor.call('insertTrim', 
-			$('#trim-name').val(),
-			$('#trim-desc').val(),
-			$('#trim-kit').val(),
-			$('#trim-url').val(),
-			$('#trim-price').val()
-		);
-		// Clear inputs
-		$('#trim-name').val('');
-		$('#trim-desc').val('');
-		$('#trim-kit').val('');
-		$('#trim-url').val('');
-		$('#trim-price').val('');
-		$('#trim-name').focus();
-		// Alert
-		Bert.alert({
-		  type: 'admin-add',
-		  message: 'Trim added to store.',
-		  style: 'growl-top-right',
-		  icon: 'ion-plus-round'
-		});
-	},
+	
 	'click #prev-trim-btn' () {
 		var trimDoc = Trims.find({createdAt: {$lt: Session.get('current-trim-date')}}, {sort: {createdAt: -1}, limit: 1})
 	

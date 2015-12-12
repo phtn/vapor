@@ -11,15 +11,17 @@ template(name='adminTrims')
 				div.panel-body
 					div.module-div
 						p Add Trims to Store
-						br
-						input(type='text' placeholder='Name').form-control#trim-name
-						input(type='text' placeholder='Description').form-control#trim-desc
-						input(type='text' placeholder='Kit Includes').form-control#trim-kit
-						input(type='text' placeholder='Image file').form-control#trim-url
-						input(type='text' placeholder='Set Price').form-control#trim-price
-						br
-						button.btn.btn-info#add-trim-btn
-							span.ion-plus-round &nbsp; ADD TRIM
+						hr
+						+autoForm id='insertTrimForm' type='insert' collection='Trims'
+							+afQuickField name='name' placeholder='Name'
+							+afQuickField name='desc' placeholder='Description'
+							+afQuickField name='kit' placeholder='Kit Includes'
+							+afQuickField name='price' placeholder='Set Price'
+							+afQuickField name='imgId' type='cfs-file' collection='trims-images'
+							button(type='submit').btn.btn-info
+								span.ion-plus-round &nbsp;&nbsp;&nbsp; 
+								span 
+									strong ADD TRIM
 					
 
 		// EDIT

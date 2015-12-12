@@ -6,7 +6,7 @@ Template.cart.helpers({
 	},
 	subtotal () {
 		var subtotal = 0;
-		Cart.find({}).map((doc) => {
+		Cart.find({owner: Meteor.userId()}).map((doc) => {
 		  	subtotal += doc.price;
 			Session.setPersistent('subtotal', subtotal.toFixed(2));
 		});

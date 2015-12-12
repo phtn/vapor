@@ -61,7 +61,6 @@ template(name='adminEjuice')
 							br
 							input(type='text' placeholder='Name').form-control#edit-ejuice-name
 							input(type='text' placeholder='Description').form-control#edit-ejuice-desc
-							input(type='text' placeholder='Image file').form-control#edit-ejuice-url
 							br
 							button.btn.btn-primary#prev-ejuice-btn
 								span.ion-ios-arrow-back
@@ -99,7 +98,10 @@ template(name='adminEjuice')
 				div.panel-body
 					//EJUICE
 					div.module-div
-						p E-Juice Flavors
+						p 
+							span E-Juice Flavors &nbsp;&nbsp;&nbsp;	
+							span #{ejuiceCount} items
+
 						hr
 						+each ejuice
 							div.ejuice-remove-list
@@ -114,7 +116,7 @@ template(name='adminEjuice')
 						hr
 						+each sizes
 							div.ejuice-remove-list
-								span.pull-left #{size}ml &nbsp;&nbsp;&nbsp;
+								span.pull-left #{size} ml &nbsp;&nbsp;&nbsp;
 								span.pull-left $ #{price}
 								span.pull-right#remove-size-admin-list
 									i.fa.fa-trash-o
@@ -126,7 +128,7 @@ template(name='adminEjuice')
 						hr
 						+each nic
 							div.ejuice-remove-list
-								span.pull-left #{level}mg
+								span.pull-left #{level} mg
 								span.pull-right#remove-nic-admin-list
 									i.fa.fa-trash-o
 								br

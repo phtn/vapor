@@ -12,10 +12,7 @@ Meteor.publish('showNicotineLevels', ()=> {
 
 
 
-// TRIMS
-Meteor.publish('showTrims', ()=> {
-	return Trims.find({})
-});
+
 
 // CART
 Meteor.publish('showCart', ()=> {

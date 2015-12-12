@@ -36,7 +36,7 @@ Template.nav.events({
 
 Template.nav.helpers({
 	countCart () {
-		return Cart.find({}).count()
+		return Cart.find({owner: Meteor.userId()}).count()
 	}
 });
 

@@ -75,12 +75,11 @@ Template.adminEjuice.events({
 		});
 	},
 	'click #next-ejuice-btn' () {
-		var ejDoc = Ejuice.find({createdAt: {$gt: Session.get('current-ejuice-date')}}, {sort: {createdAt: 1}, limit: 1});
+		var ejDoc = Ejuices.find({createdAt: {$gt: Session.get('current-ejuice-date')}}, {sort: {createdAt: 1}, limit: 1});
 
 		ejDoc.forEach((doc)=> {
 			$('#edit-ejuice-name').val(doc.name)
 			$('#edit-ejuice-desc').val(doc.desc)
-			$('#edit-ejuice-url').val(doc.url)
 			Session.setPersistent('current-ejuice-name', doc.name)
 			Session.setPersistent('current-ejuice-date', doc.createdAt)
 			Session.setPersistent('current-ejuice-id', doc._id)
@@ -88,7 +87,7 @@ Template.adminEjuice.events({
 		//console.log('test')
 	},
 	'click #prev-ejuice-btn' () {
-		var ejDoc = Ejuice.find({createdAt: {$lt: Session.get('current-ejuice-date')}}, {sort: {createdAt: -1}, limit: 1});
+		var ejDoc = Ejuices.find({createdAt: {$lt: Session.get('current-ejuice-date')}}, {sort: {createdAt: -1}, limit: 1});
 
 		ejDoc.forEach((doc)=> {
 			$('#edit-ejuice-name').val(doc.name)
@@ -177,24 +176,26 @@ Template.adminEjuice.events({
 
 Template.adminEjuice.helpers({
 	ejuice () {
-		return Ejuice.find({})
+		return Ejuices.find({})
 	},
 	sizes () {
 		return BottleSizes.find({})
 	},
 	nic () {
 		return NicotineLevels.find({})
+	},
+	ejuiceCount () {
+		return Ejuices.find().count()
 	}
 });
 
 Template.adminEjuice.rendered = ()=> {
-	var ej = Ejuice.find({}, {sort: {createdAt: 1}, limit: 1});
+	var ej = Ejuices.find({}, {sort: {createdAt: 1}, limit: 1});
 
 	ej.forEach((first)=>{
 		Session.setPersistent('current-ejuice-date', first.createdAt)
 		$('#edit-ejuice-name').val(first.name)
 		$('#edit-ejuice-desc').val(first.desc)
-		$('#edit-ejuice-url').val(first.url)
 		Session.setPersistent('current-ejuice-name', first.name)
 		Session.setPersistent('current-ejuice-id', first._id)
 	});
