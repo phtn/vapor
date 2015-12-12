@@ -4,13 +4,14 @@ template(name='ejuiceTemp')
 		
 		div.col-lg-4.img-name-price
 			span.ion-android-arrow-back.pull-left#back-to-ejuice
-			img(src='#{url}')
+			+with image
+				img(src='#{url}')
 			
-			h4.name-h4 #{name} &nbsp; 
+			h4.name-label-temp #{name} &nbsp; 
 				strong $ #{price}
-			
+			hr
 		div.col-lg-5.ejuice-widget
-			
+			p.small-label DESCRIPTION
 			p.desc-temp #{desc}
 			hr
 			p.small-label SIZE &nbsp; | &nbsp; 

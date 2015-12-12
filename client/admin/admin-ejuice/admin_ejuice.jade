@@ -16,27 +16,24 @@ template(name='adminEjuice')
 							+afQuickField name='name' placeholder='Name'
 							+afQuickField name='desc' placeholder='Description'
 							+afQuickField name='imgId' type='cfs-file' collection='ejuice-images'
-							button(type='submit').btn.btn-primary Add E-Juice
-						br
-						input(type='text' placeholder='Name').form-control#name-ej
-						input(type='text' placeholder='Description').form-control#desc-ej
-						input(type='text' placeholder='Image file').form-control#url-ej
-						br
-						button.btn.btn-info#add-ejuice-btn
-							i.fa.fa-plus &nbsp; ADD E-JUICE
-					hr
+							button(type='submit').btn.btn-info
+								span.ion-plus &nbsp;&nbsp;&nbsp;
+								span 
+									strong Add E - Juice
+						
+					span.ion-ios-more.divider
 					div.module-div
 						p Add Bottle Sizes
-						br
+						hr
 						input(type='text' placeholder='Bottle size in ml ( e.g. 75 )').form-control#bottle-size-input
 						input(type='text' placeholder='Set Price').form-control#price-input
 						br
 						button.btn.btn-info#add-bottle-size-btn
 							i.fa.fa-plus &nbsp; ADD BOTTLE SIZE
-					hr
+					span.ion-ios-more.divider
 					div.module-div
 						p Add Nicotine Levels
-						br
+						hr
 						input(type='text' placeholder='Nicotine Level in mg ( e.g. 30 )').form-control#nicotine-level-input
 						br
 						button.btn.btn-info#add-nicotine-level-btn
@@ -53,6 +50,7 @@ template(name='adminEjuice')
 					// INFO
 					div.module-div
 							p Edit E-Juice Info
+							hr
 							br
 							input(type='text' placeholder='Name').form-control#edit-ejuice-name
 							input(type='text' placeholder='Description').form-control#edit-ejuice-desc
@@ -63,11 +61,11 @@ template(name='adminEjuice')
 							button.btn.btn-primary#save-ejuice-btn SAVE
 							button.btn.btn-primary#next-ejuice-btn
 								span.ion-ios-arrow-forward
-						hr
+					span.ion-ios-more.divider
 					// SIZES
 					div.module-div
 							p Edit Bottle Size & Price
-							br
+							hr
 							div.col-md-2
 								label(for='edit-bottle-size').control-label Size
 							div.col-md-10
@@ -83,7 +81,7 @@ template(name='adminEjuice')
 							button.btn.btn-primary#save-size-btn SAVE
 							button.btn.btn-primary#next-size-btn
 								span.ion-ios-arrow-forward
-						hr
+
 		// REMOVE
 		div.col-lg-4
 			div.panel.panel-danger
@@ -95,18 +93,18 @@ template(name='adminEjuice')
 					//EJUICE
 					div.module-div
 						p E-Juice Flavors
-						br
+						hr
 						+each ejuice
 							div.ejuice-remove-list
 								span.pull-left #{name}
 								span.pull-right#remove-ejuice-admin-list
 									i.fa.fa-trash-o
 								br
-					hr
+					span.ion-ios-more.divider
 					// BOTTLE SIZE
 					div.module-div
 						p Bottle Size & Price
-						br
+						hr
 						+each sizes
 							div.ejuice-remove-list
 								span.pull-left #{size}ml &nbsp;&nbsp;&nbsp;
@@ -114,11 +112,11 @@ template(name='adminEjuice')
 								span.pull-right#remove-size-admin-list
 									i.fa.fa-trash-o
 								br
-					hr
+					span.ion-ios-more.divider
 					// NICOTINE LEVEL
 					div.module-div
 						p Nicotine Levels
-						br
+						hr
 						+each nic
 							div.ejuice-remove-list
 								span.pull-left #{level}mg

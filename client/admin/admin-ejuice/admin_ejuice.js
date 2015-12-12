@@ -4,6 +4,13 @@ AutoForm.hooks({
      insert (error, result, template) {
        insertedFile = Ejuices.findOne(result).imgId;
        EjuiceImages.update({_id: insertedFile}, {$set: {'ejuiceId': result}});
+       // Alert notification
+		Bert.alert({
+		  type: 'admin-add',
+		  message: 'E-juice added to store.',
+		  style: 'growl-top-right',
+		  icon: 'ion-plus-round'
+		});
      }
    }
  }
@@ -25,13 +32,7 @@ Template.adminEjuice.events({
 		$('#desc-ej').val('');
 		$('#url-ej').val('');
 		$('#name-ej').focus();
-		// Alert notification
-		Bert.alert({
-		  type: 'admin-add',
-		  message: 'E-juice added to inventory.',
-		  style: 'growl-top-right',
-		  icon: 'ion-plus-round'
-		});
+		
 	},
 	'click #add-bottle-size-btn' () {
 		// Insert Bottle Size

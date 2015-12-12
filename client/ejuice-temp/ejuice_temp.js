@@ -33,8 +33,8 @@ Template.ejuiceTemp.helpers({
 	desc () {
 		return Session.get('ejuice-desc')
 	},
-	url () {
-		return Session.get('ejuice-url')
+	image () {
+		return EjuiceImages.findOne({ejuiceId: Session.get('ejuice-id')})
 	},
 	price () {
 		return Session.get('ejuice-price')

@@ -2,12 +2,12 @@ Ejuices = new Mongo.Collection('ejuices');
 
 Ejuices.allow({
 	insert () {
-		//return Meteor.userId() === 'TFseLKgPTFr6zHwn2'
-		return true
+		return Meteor.userId() === 'TFseLKgPTFr6zHwn2'
+		//return true
 	},
 	update () {
-		//return Meteor.userId() === 'TFseLKgPTFr6zHwn2'	
-		return true
+		return Meteor.userId() === 'TFseLKgPTFr6zHwn2'	
+		//return true
 	}
 });
 

@@ -33,21 +33,12 @@ Template.ejuice.helpers({
 });
 
 Template.ejuice.events({
-	'click #add-to-cart-ej' () {
-		console.log(this.url);
-		Meteor.call('insertToCart', this._id, this.name, this.desc, this.url, this.price)
-		Bert.alert({
-				type: 'addThis',
-				style: 'fixed-bottom',
-				message: Session.get('ejuice-name') + ' added to your cart!',
-				icon: 'fa-check'
-			})
-	},
+	
 	'click .grid-thumbnail' () {
 		Session.setPersistent('ejuice-id', this._id);
 		Session.setPersistent('ejuice-name', this.name);
 		Session.setPersistent('ejuice-desc', this.desc);
-		Session.setPersistent('ejuice-url', this.url);
+		Session.setPersistent('ejuice-url', this.imgId);
 		FlowRouter.go('/ejuice-temp')
 	}
 });
