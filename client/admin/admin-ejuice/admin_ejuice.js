@@ -13,6 +13,30 @@ AutoForm.hooks({
 		});
      }
    }
+ },
+ insertSizeForm: {
+ 	after: {
+ 		insert () {
+ 			Bert.alert({
+			  type: 'admin-add',
+			  message: 'Bottle Size added to database.',
+			  style: 'growl-top-right',
+			  icon: 'ion-plus-round'
+			})
+ 		}
+ 	}
+ },
+ insertNicotineForm: {
+ 	after: {
+ 		insert () {
+ 			Bert.alert({
+			  type: 'admin-add',
+			  message: 'Nicotine Level added to database.',
+			  style: 'growl-top-right',
+			  icon: 'ion-plus-round'
+			})
+ 		}
+ 	}
  }
 });
 
@@ -20,20 +44,7 @@ Meteor.subscribe('showEjuices');
 Meteor.subscribe('showEjuiceImages');
 
 Template.adminEjuice.events({
-	'click #add-ejuice-btn' () {
-		// Insert E-Juice
-		Meteor.call('insertEjuiceFlavor', 
-			$('#name-ej').val(),
-			$('#desc-ej').val(),
-			$('#url-ej').val()
-		);
-		// Clear inputs
-		$('#name-ej').val('');
-		$('#desc-ej').val('');
-		$('#url-ej').val('');
-		$('#name-ej').focus();
-		
-	},
+	
 	'click #add-bottle-size-btn' () {
 		// Insert Bottle Size
 		Meteor.call('insertBottleSize', $('#bottle-size-input').val(), $('#price-input').val());

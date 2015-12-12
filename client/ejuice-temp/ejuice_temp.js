@@ -9,7 +9,6 @@ Template.ejuiceTemp.rendered = ()=> {
 	var highlight = 'highlight'; 
 	var $size = $('.size-btn').click(function(e) {
 	    e.preventDefault();
-	
 	    $size.removeClass(highlight);
 	    $(this).addClass(highlight);
 	});
@@ -59,7 +58,9 @@ Template.ejuiceTemp.events({
 		Session.setPersistent('ejuice-nicotine-level', this.level)
 	},
 	'click #add-to-cart-ejuice' () {
-		Meteor.call('addEjuiceToCart', 
+		if (Meteor.userId() != '') {
+			Meteor.call('addEjuiceToCart',
+			Meteor.userId(), 
 			Session.get('ejuice-id'), 
 			Session.get('ejuice-name'), 
 			Session.get('ejuice-price'), 
@@ -74,6 +75,9 @@ Template.ejuiceTemp.events({
 		  style: 'growl-top-right',
 		  icon: 'ion-android-checkmark-circle'
 		});
+		} else {
+			FlowRouter.go('/login')
+		}
 	}
 })
 

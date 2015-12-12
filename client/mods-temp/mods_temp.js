@@ -1,18 +1,18 @@
 Template.modsTemp.helpers({
 	name () {
-		return Session.get('name-mod')
-	},
-	price () {
-		return Session.get('price-mod')
+		return Session.get('mod-name')
 	},
 	desc () {
-		return Session.get('desc-mod')
+		return Session.get('mod-desc')
 	},
 	kit () {
-		return Session.get('kit-mod')
+		return Session.get('mod-kit')
 	},
-	url () {
-		return Session.get('url-mod')
+	price () {
+		return Session.get('mod-price')
+	},
+	image () {
+		return ModsImages.findOne({modId: Session.get('mod-id')})
 	}
 });
 

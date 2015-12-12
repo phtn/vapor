@@ -1,3 +1,25 @@
+AutoForm.hooks({
+ 	insertModForm: { // autoform id
+   	after: {
+     	insert (error, result, template) {
+	      insertedFile = Mods.findOne(result).imgId;
+	      ModsImages.update({_id: insertedFile}, {$set: {'modId': result}});
+      // Alert notification
+			Bert.alert({
+			  type: 'admin-add',
+			  message: 'Mod added to store.',
+			  style: 'growl-top-right',
+			  icon: 'ion-plus-round'
+			});
+     }
+   	}
+ 	}
+});
+
+Meteor.subscribe('showMods');
+Meteor.subscribe('showModsImages');
+
+// RENDERED
 Template.adminMods.rendered = ()=> {
 	var modDoc = Mods.find({}, {sort: {createdAt: 1}, limit: 1});
 
@@ -12,32 +34,8 @@ Template.adminMods.rendered = ()=> {
 		Session.setPersistent('current-mod-id', first._id)
 	});
 }
-
+// EVENTS
 Template.adminMods.events({
-	'click #add-mod-btn' () {
-		// ADD MOD
-		Meteor.call('insertMod', 
-			$('#name-mod').val(),
-			$('#price-mod').val(),
-			$('#desc-mod').val(),
-			$('#kit-mod').val(),
-			$('#url-mod').val()
-		);
-		// Clear inputs
-		$('#name-mod').val('');
-		$('#price-mod').val('');
-		$('#desc-mod').val('');
-		$('#kit-mod').val('');
-		$('#url-mod').val('');
-		$('#name-mod').focus();
-		// Alert
-		Bert.alert({
-		  type: 'admin-add',
-		  message: 'Mod added to store.',
-		  style: 'growl-top-right',
-		  icon: 'ion-plus-round'
-		});
-	},
 	'click #prev-mod-btn' () {
 		var modDoc = Mods.find({createdAt: {$lt: Session.get('current-mod-date')}}, {sort: {createdAt: -1}, limit: 1})
 	
@@ -79,7 +77,7 @@ Template.adminMods.events({
 		Meteor.call('removeModAdmin', this._id)
 	}
 });
-
+// HELPERS
 Template.adminMods.helpers({
 	mod () {
 		return Mods.find({})

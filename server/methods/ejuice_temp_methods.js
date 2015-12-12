@@ -1,6 +1,7 @@
 Meteor.methods({
-	addEjuiceToCart (id,name, price, url, size, nic, type) {
+	addEjuiceToCart (owner, id,name, price, url, size, nic, type) {
 		Cart.insert({
+			owner: owner,
 			item: id,
 			name: name,
 			price: price,

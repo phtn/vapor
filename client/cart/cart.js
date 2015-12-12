@@ -2,7 +2,7 @@ Meteor.subscribe('showCart');
 
 Template.cart.helpers({
 	cartItems () {
-		return Cart.find({})
+		return Cart.find({owner: Meteor.userId()})
 	},
 	subtotal () {
 		var subtotal = 0;

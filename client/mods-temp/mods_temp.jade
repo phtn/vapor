@@ -4,17 +4,18 @@ template(name='modsTemp')
 		
 		div.col-lg-3.img-name-price
 			span.ion-android-arrow-back.pull-left#back-to-mods
-			img(src='#{url}' style='width:60%; height:60%')
+			+with image
+				img(src='#{url}' style='width:60%; height:60%')
 			
-			h4.name-h4 #{name} &nbsp; 
+			h4.name-label-temp #{name} &nbsp; 
 				strong $ #{price}
 			hr
 		div.col-lg-5.mods-widget
 			
-			p DESCRIPTION
+			p.small-label DESCRIPTION
 			p.desc-temp #{desc}
 			hr
-			p KIT INCLUDES
+			p.small-label KIT INCLUDES
 			p.desc-temp #{kit}
 			hr
 			button.btn.btn-material-purple-800.up-animate#add-to-cart-mod

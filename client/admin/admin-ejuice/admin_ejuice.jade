@@ -23,21 +23,28 @@ template(name='adminEjuice')
 						
 					span.ion-ios-more.divider
 					div.module-div
-						p Add Bottle Sizes
+						p Add Bottle Size & Price
 						hr
-						input(type='text' placeholder='Bottle size in ml ( e.g. 75 )').form-control#bottle-size-input
-						input(type='text' placeholder='Set Price').form-control#price-input
-						br
-						button.btn.btn-info#add-bottle-size-btn
-							i.fa.fa-plus &nbsp; ADD BOTTLE SIZE
+						+autoForm id='insertSizeForm' type='insert' collection='BottleSizes'
+							+afQuickField name='size' placeholder='Bottle Sizes in ml'
+							+afQuickField name='price' placeholder='Set Price'
+							button(type='submit').btn.btn-info
+								span.ion-plus &nbsp;&nbsp;&nbsp;
+								span 
+									strong Add Bottle Size
+
+						
 					span.ion-ios-more.divider
 					div.module-div
 						p Add Nicotine Levels
 						hr
-						input(type='text' placeholder='Nicotine Level in mg ( e.g. 30 )').form-control#nicotine-level-input
-						br
-						button.btn.btn-info#add-nicotine-level-btn
-							i.fa.fa-plus &nbsp; ADD NICOTINE LEVEL
+						+autoForm id='insertNicotineForm' type='insert' collection='NicotineLevels'
+							+afQuickField name='level' placeholder='Nicotine Level in mg'
+							
+							button(type='submit').btn.btn-info
+								span.ion-plus &nbsp;&nbsp;&nbsp;
+								span 
+									strong Add Nicotine Level
 
 		// EDIT
 		div.col-lg-4

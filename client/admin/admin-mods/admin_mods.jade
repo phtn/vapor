@@ -11,15 +11,17 @@ template(name='adminMods')
 				div.panel-body
 					div.module-div
 						p Add Mods to Store
-						br
-						input(type='text' placeholder='Name').form-control#name-mod
-						input(type='text' placeholder='Description').form-control#desc-mod
-						input(type='text' placeholder='Kit Includes').form-control#kit-mod
-						input(type='text' placeholder='Image file').form-control#url-mod
-						input(type='text' placeholder='Set Price').form-control#price-mod
-						br
-						button.btn.btn-info#add-mod-btn
-							span.ion-plus-round &nbsp; ADD MOD
+						hr
+						+autoForm id='insertModForm' type='insert' collection='Mods'
+							+afQuickField name='name' placeholder='Name'
+							+afQuickField name='desc' placeholder='Description'
+							+afQuickField name='kit' placeholder='Kit Includes'
+							+afQuickField name='price' placeholder='Set Price'
+							+afQuickField name='imgId' type='cfs-file' collection='mods-images'
+							button.btn.btn-info#add-mod-btn
+								span.ion-plus-round &nbsp;&nbsp;&nbsp; 
+								span 
+									strong ADD MOD
 					
 
 		// EDIT

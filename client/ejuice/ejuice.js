@@ -1,4 +1,3 @@
-Meteor.subscribe('showEjuice');
 
 Template.ejuice.rendered = () => {
 	$(".owl-carousel").owlCarousel({
@@ -13,17 +12,10 @@ Template.ejuice.rendered = () => {
 	});
 	$('#slide-ej-btn').click();
 	$('#slide-ej-btn').focus();
-	//let desc = $('.desc');
-	//desc.text(desc.text().substring(0,10))
+
 }
 
 Template.ejuice.helpers({
-	ejuice () {
-		return Ejuice.find({})
-	},
-	shortDesc () {
-		//return
-	},
 	ejuices () {
 		return Ejuices.find()
 	},
@@ -39,6 +31,7 @@ Template.ejuice.events({
 		Session.setPersistent('ejuice-name', this.name);
 		Session.setPersistent('ejuice-desc', this.desc);
 		Session.setPersistent('ejuice-url', this.imgId);
+		
 		FlowRouter.go('/ejuice-temp')
 	}
 });
