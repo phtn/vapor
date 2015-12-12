@@ -21,7 +21,7 @@ Template.nav.events({
 		FlowRouter.go('/mods')
 	},
 	'click #trims' () {
-		//FlowRouter.go('/trims')
+		FlowRouter.go('/trims')
 	},
 	'click #social' () {
 		//FlowRouter.go('/social')
@@ -30,7 +30,7 @@ Template.nav.events({
 		FlowRouter.go('/cart')
 	},
 	'click #sign-in' () {
-		//FlowRouter.go('/sign-in')
+		FlowRouter.go('/login')
 	},
 });
 

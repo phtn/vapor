@@ -11,6 +11,12 @@ template(name='adminEjuice')
 				div.panel-body
 					div.module-div
 						p Add E-Juice to Store
+						hr
+						+autoForm id='insertEjuiceForm' type='insert' collection='Ejuices'
+							+afQuickField name='name' placeholder='Name'
+							+afQuickField name='desc' placeholder='Description'
+							+afQuickField name='imgId' type='cfs-file' collection='ejuice-images'
+							button(type='submit').btn.btn-primary Add E-Juice
 						br
 						input(type='text' placeholder='Name').form-control#name-ej
 						input(type='text' placeholder='Description').form-control#desc-ej

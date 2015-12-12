@@ -1,3 +1,13 @@
+Template.adminNav.rendered = ()=> {
+	var focus = 'focus'; 
+	var $nav = $('.auth-admin-nav li').click(function(e) {
+	    e.preventDefault();
+	
+	    $nav.removeClass(focus);
+	    $(this).addClass(focus);
+	});
+}
+
 Template.adminNav.events({
 	'click #admin-ejuice' () {
 		FlowRouter.go('/admin/ejuice')
@@ -12,3 +22,4 @@ Template.adminNav.events({
 		FlowRouter.go('/admin/orders')
 	}
 });
+

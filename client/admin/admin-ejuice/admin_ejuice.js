@@ -1,3 +1,17 @@
+AutoForm.hooks({
+ insertEjuiceForm: { // autoform id
+   after: {
+     insert (error, result, template) {
+       insertedFile = Ejuices.findOne(result).imgId;
+       EjuiceImages.update({_id: insertedFile}, {$set: {'ejuiceId': result}});
+     }
+   }
+ }
+});
+
+Meteor.subscribe('showEjuices');
+Meteor.subscribe('showEjuiceImages');
+
 Template.adminEjuice.events({
 	'click #add-ejuice-btn' () {
 		// Insert E-Juice

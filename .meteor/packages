@@ -29,3 +29,11 @@ msavin:mongol
 themeteorchef:bert
 u2622:persistent-session
 pagebakers:ionicons
+cfs:standard-packages
+cfs:filesystem
+cfs:ui
+cfs:autoform
+aldeed:collection2
+aldeed:autoform
+service-configuration
+accounts-google

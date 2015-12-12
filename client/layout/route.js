@@ -48,6 +48,13 @@ FlowRouter.route('/mods-temp', {
 	}
 });
 
+FlowRouter.route('/trims', {
+	name: 'Trims',
+	action(params) {
+		renderThisTemplate('trims')
+	}
+});
+
 FlowRouter.route('/cart', {
 	name: 'Cart',
 	action(params) {
@@ -55,3 +62,9 @@ FlowRouter.route('/cart', {
 	}
 });
 
+FlowRouter.route('/login', {
+	name: 'login',
+	action(params) {
+		renderThisTemplate('login')
+	}
+});
