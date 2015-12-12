@@ -1,10 +1,18 @@
 template(name='ejuice')
 	div.text-center.ejuice-div
-		+each ejuice
+		//+each ejuice
 			div.thumbnail.grid-thumbnail.text-center.col-xs-5.col-sm-5.col-md-4.col-lg-3.up-animate
 				img(src='#{url}' onload='this.style.opacity="1"')
 				div.caption
 				h5.name-h4 #{name} &nbsp; 
 				hr
 				p.desc #{desc}
-				
+
+		+each ejuices
+			div.thumbnail.grid-thumbnail.text-center.col-xs-5.col-sm-5.col-md-4.col-lg-3.up-animate
+				+with image
+					img(src='#{url}' style='width:50%; height:50%' onload='this.style.opacity="1"')
+				div.caption
+				h5.name-h4 #{name} &nbsp; 
+				hr
+				p.desc #{desc}

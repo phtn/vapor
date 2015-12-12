@@ -23,6 +23,12 @@ Template.ejuice.helpers({
 	},
 	shortDesc () {
 		//return
+	},
+	ejuices () {
+		return Ejuices.find()
+	},
+	image () {
+		return EjuiceImages.findOne({ejuiceId: this._id})
 	}
 });
 
