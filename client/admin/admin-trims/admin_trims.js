@@ -3,7 +3,7 @@ AutoForm.hooks({
 	   	after: {
 	     	insert (error, result, template) {
 		      	insertedFile = Trims.findOne(result).imgId;
-		      	ModsImages.update({_id: insertedFile}, {$set: {'trimId': result}});
+		      	TrimsImages.update({_id: insertedFile}, {$set: {'trimId': result}});
 	      	
 	      	// Alert notification
 				Bert.alert({
@@ -17,8 +17,8 @@ AutoForm.hooks({
  	}
 });
 
-Meteor.subscribe('showMods');
-Meteor.subscribe('showModsImages');
+Meteor.subscribe('showTrims');
+Meteor.subscribe('showTrimsImages');
 
 
 Template.adminTrims.rendered = ()=> {

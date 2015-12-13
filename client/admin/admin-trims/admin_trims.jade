@@ -34,11 +34,10 @@ template(name='adminTrims')
 				div.panel-body
 					div.module-div
 							p Edit Trim Info
-							br
+							hr
 							input(type='text' placeholder='Name').form-control#edit-trim-name
 							input(type='text' placeholder='Description').form-control#edit-trim-desc
 							input(type='text' placeholder='Kit Includes').form-control#edit-trim-kit
-							input(type='text' placeholder='Image file').form-control#edit-trim-url
 							input(type='text' placeholder='Set Price').form-control#edit-trim-price
 							br
 							button.btn.btn-primary#prev-trim-btn
@@ -56,8 +55,10 @@ template(name='adminTrims')
 						span REMOVE
 				div.panel-body
 					div.module-div
-						p Trims List &nbsp; ( #{trimCount} items )
-						br
+						p 
+							span Trims List &nbsp;&nbsp;&nbsp;
+							span #{trimCount}&nbsp;&nbsp; items
+						hr
 						+each trim
 							div.ejuice-remove-list
 								span.pull-left $ #{price} &nbsp;&nbsp;

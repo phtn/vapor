@@ -2,7 +2,7 @@ template(name='ejuiceTemp')
 	
 	div.container-fluid.text-center.ejuice-temp-div
 		
-		div.col-lg-4.img-name-price
+		div.col-md-4.img-name-price
 			span.ion-android-arrow-back.pull-left#back-to-ejuice
 			+with image
 				img(src='#{url}')
@@ -10,7 +10,7 @@ template(name='ejuiceTemp')
 			h4.name-label-temp #{name} &nbsp; 
 				strong $ #{price}
 			hr
-		div.col-lg-5.ejuice-widget
+		div.col-md-5.ejuice-widget
 			p.small-label DESCRIPTION
 			p.desc-temp #{desc}
 			hr

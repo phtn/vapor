@@ -17,7 +17,9 @@ template(name='nav')
 							span.ion-ios-gear &nbsp;  MODS
 					li#trims
 						a.btn.btn-default.btn-flat.links
-							span.ion-bag &nbsp;  TRIMS
+							span
+								i.fa.fa-plug &nbsp;
+							span TRIMS
 					li#visit
 						a.btn.btn-default.btn-flat.links
 							span.ion-location &nbsp;  VISIT US
@@ -25,9 +27,14 @@ template(name='nav')
 						a(href='/cart').btn.btn-default.btn-flat.links
 							span.ion-ios-cart &nbsp;  CART
 							span.badge.badge-default #{countCart}
-					li#sign-in
-						a.btn.btn-default.btn-flat.links
-							span.ion-person &nbsp;  SIGN IN
+					if currentUser
+						li#user
+							a.btn.btn-default.btn-flat.links
+								span.ion-person &nbsp;  #{user}
+					else	
+						li#sign-in
+							a.btn.btn-default.btn-flat.links
+								span.ion-person &nbsp;  SIGN IN
 				ul.nav.nav-tabs.nav-justified.mobile-screen
 					li.pull-right
 						a(href='bootstrap-elements.html' data-toggle='dropdown').dropdown-toggle.btn.btn-default.btn-flat.links#menu
@@ -56,7 +63,7 @@ template(name='nav')
 							li
 								a(href='/trims')
 									span
-										i.ion-bag
+										i.fa.fa-plug
 									span TRIMS
 							hr
 							li
@@ -72,8 +79,13 @@ template(name='nav')
 									span CART
 									span.badge.badge-default #{countCart}
 							hr
-							li
-								a(href='#')
-									span
-										i.fa.fa-user
-									span SIGN IN
+							if currentUser
+								li
+									a(href='/profile')
+										span.ion-person
+										span #{user}
+							else
+								li
+									a(href='/login')
+										span.ion-person
+										span SIGN IN

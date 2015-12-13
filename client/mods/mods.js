@@ -1,14 +1,5 @@
-Meteor.subscribe('showMods');
 
-Template.mods.helpers({
-	mods () {
-		return Mods.find({})
-	},
-	image () {
-		return ModsImages.findOne({modId: this._id})
-	}
-});
-
+// EVENTS
 Template.mods.events({
 	
 	'click .grid-thumbnail' () {
@@ -20,4 +11,14 @@ Template.mods.events({
 
 		FlowRouter.go('/mods-temp')
 	}
-})
+});
+
+// HELPERS
+Template.mods.helpers({
+	mods () {
+		return Mods.find({})
+	},
+	image () {
+		return ModsImages.findOne({modId: this._id})
+	}
+});

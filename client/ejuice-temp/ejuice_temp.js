@@ -1,10 +1,11 @@
 Meteor.subscribe('showBottleSizes');
 Meteor.subscribe('showNicotineLevels');
 
+// RENDERED
 Template.ejuiceTemp.rendered = ()=> {
 	Session.setDefault('ejuice-price', 13.99);
 	Session.setDefault('nicotine-level', '0');
-
+	Session.setPersistent('current-temp-page', 'ejuice-temp');
 	
 	var highlight = 'highlight'; 
 	var $size = $('.size-btn').click(function(e) {
@@ -25,6 +26,7 @@ Template.ejuiceTemp.rendered = ()=> {
 	
 }
 
+// HELPERS
 Template.ejuiceTemp.helpers({
 	name () {
 		return Session.get('ejuice-name')
@@ -46,6 +48,7 @@ Template.ejuiceTemp.helpers({
 	}
 });
 
+// EVENTS
 Template.ejuiceTemp.events({
 	'click #back-to-ejuice' () {
 		FlowRouter.go('/ejuice');
@@ -58,7 +61,7 @@ Template.ejuiceTemp.events({
 		Session.setPersistent('ejuice-nicotine-level', this.level)
 	},
 	'click #add-to-cart-ejuice' () {
-		if (Meteor.userId() != '') {
+		if (Meteor.userId() !== null) {
 			Meteor.call('addEjuiceToCart',
 			Meteor.userId(), 
 			Session.get('ejuice-id'), 
@@ -69,12 +72,12 @@ Template.ejuiceTemp.events({
 			Session.get('ejuice-nicotine-level'), 
 			'ion-waterdrop');
 
-		Bert.alert({
-		  type: 'add-to-cart-ejuice',
-		  message: 'Successfully added to cart!',
-		  style: 'growl-top-right',
-		  icon: 'ion-android-checkmark-circle'
-		});
+			Bert.alert({
+			  type: 'add-to-cart',
+			  message: 'Successfully added to cart!',
+			  style: 'growl-top-right',
+			  icon: 'ion-android-checkmark-circle'
+			});
 		} else {
 			FlowRouter.go('/login')
 		}

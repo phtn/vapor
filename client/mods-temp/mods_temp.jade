@@ -2,7 +2,7 @@ template(name='modsTemp')
 	
 	div.container-fluid.text-center.mods-temp-div
 		
-		div.col-lg-3.img-name-price
+		div.col-md-4.img-name-price
 			span.ion-android-arrow-back.pull-left#back-to-mods
 			+with image
 				img(src='#{url}' style='width:60%; height:60%')
@@ -10,7 +10,7 @@ template(name='modsTemp')
 			h4.name-label-temp #{name} &nbsp; 
 				strong $ #{price}
 			hr
-		div.col-lg-5.mods-widget
+		div.col-md-5.mods-widget
 			
 			p.small-label DESCRIPTION
 			p.desc-temp #{desc}

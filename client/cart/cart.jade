@@ -7,7 +7,7 @@ template(name='cart')
 						span(class='#{type}')
 					div.row-content
 						div.action-secondary#trash
-							i.fa.fa-trash-o
+							span.ion-ios-minus
 						h6.name-h6.list-group-item-heading #{name}
 						span $ #{price} &nbsp;&nbsp;
 						span #{size} &nbsp;&nbsp;
@@ -32,8 +32,11 @@ template(name='cart')
 					strong $ #{total}
 
 		div.container-fluid.text-center.checkout-div
-			button.btn.btn-material-purple-800.up-animate#checkout CHECKOUT &nbsp;
-				span.ion-log-out
+			button.btn.btn-material-purple-800.up-animate#checkout PAY ON PICK UP &nbsp;&nbsp;
+				span.ion-bag
+		p.or.text-center OR
+		div.container-fluid.text-center
+			img(src='https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif').paypal
 
 	else
 		div.container-fluid.text-center.empty-cart

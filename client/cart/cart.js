@@ -31,9 +31,9 @@ Template.cart.events({
 		Meteor.call('removeItemFromCart', this._id)
 		Bert.alert({
 		  type: 'remove-from-cart',
-		  message: this.name + ' REMOVED FROM CART',
+		  message: this.name + ' removed.',
 		  style: 'growl-top-right',
-		  icon: 'ion-ios-close-outline'
+		  icon: 'ion-ios-minus'
 		});
 	}
 })

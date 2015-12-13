@@ -34,11 +34,10 @@ template(name='adminMods')
 				div.panel-body
 					div.module-div
 							p Edit Mod Info
-							br
+							hr
 							input(type='text' placeholder='Name').form-control#edit-mod-name
 							input(type='text' placeholder='Description').form-control#edit-mod-desc
 							input(type='text' placeholder='Kit Includes').form-control#edit-mod-kit
-							input(type='text' placeholder='Image file').form-control#edit-mod-url
 							input(type='text' placeholder='Set Price').form-control#edit-mod-price
 							br
 							button.btn.btn-primary#prev-mod-btn
@@ -56,8 +55,10 @@ template(name='adminMods')
 						span REMOVE
 				div.panel-body
 					div.module-div
-						p Mods List &nbsp; ( #{modCount} items )
-						br
+						p 
+							span Mods List &nbsp;&nbsp;&nbsp; 
+							span #{modCount}&nbsp;&nbsp; items
+						hr
 						+each mod
 							div.ejuice-remove-list
 								span.pull-left $ #{price} &nbsp;&nbsp;

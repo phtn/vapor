@@ -1,0 +1,22 @@
+template(name='trimsTemp')
+	
+	div.container-fluid.text-center.trim-temp-div
+		
+		div.col-md-4.img-name-price
+			span.ion-android-arrow-back.pull-left#back-to-trims
+			+with image
+				img(src='#{url}' style='width:60%; height:60%')
+			
+			h4.name-label-temp #{name} &nbsp;
+				strong $ #{price}
+			hr
+		div.col-md-5.trim-widget
+			
+			p.small-label DESCRIPTION
+			p.desc-temp #{desc}
+			hr
+			p.small-label KIT INCLUDES
+			p.desc-temp #{kit}
+			hr
+			button.btn.btn-material-purple-800.up-animate#add-to-cart-trim
+				i.fa.fa-plus &nbsp; add to cart
