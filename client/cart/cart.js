@@ -1,5 +1,6 @@
 Meteor.subscribe('showCart');
 
+// HELPERS
 Template.cart.helpers({
 	cartItems () {
 		return Cart.find({owner: Meteor.userId()})
@@ -26,17 +27,31 @@ Template.cart.helpers({
 	}
 })
 
+// EVENTS
 Template.cart.events({
 	'click #trash' () {
-		Meteor.call('removeItemFromCart', this._id)
+		Meteor.call('removeItemFromCart', this._id);
+		Meteor.call('removeItemFromCartSubmit', this.item);
 		Bert.alert({
 		  type: 'remove-from-cart',
 		  message: this.name + ' removed.',
 		  style: 'growl-top-right',
 		  icon: 'ion-ios-minus'
 		});
+	},
+	'click #pay-on-pickup' () {
+		Meteor.call('addToOrders',
+			Meteor.userId(),
+			Meteor.user().profile.name,
+			'phone',
+			'email',
+			'address',
+			Session.get('total'),
+			'for pick up',
+			'ion-bag',
+		)
 	}
-})
+});
 
 Tracker.autorun(function() {
 	

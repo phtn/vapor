@@ -10,5 +10,11 @@ Meteor.methods({
 	},
 	removeItemFromCart (id) {
 		Cart.remove({_id: id})
+	},
+	removeItemFromCartSubmit(item) {
+		CartSubmit.remove({item: item})
+	},
+	removeAfterSubmit () {
+		Cart.remove({})
 	}
 })

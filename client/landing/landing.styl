@@ -1,10 +1,44 @@
+
 .landing-body
-	background-color #222
-	height 100vh
+	
+	background-color #6b92b9
+	height 100%
+	top 0
+	left 0
+	position absolute
 	width 100%
+    background-image url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://i.imgur.com/XHuy0NJ.png'), url('http://i.imgur.com/okpRxJU.png')
+    -webkit-animation snow 20s linear infinite
+    -moz-animation snow 20s linear infinite
+    -ms-animation snow 20s linear infinite
+    animation snow 20s linear infinite
+    
+    vendors = official
+    
+	@keyframes snow {
+	  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+	  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+	  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+	}
+	@-moz-keyframes snow {
+	  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+	  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+	  100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
+	}
+	@-webkit-keyframes snow {
+	  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+	  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+	  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+	}
+	@-ms-keyframes snow {
+	  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+	  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+	  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+	}
+	
 .logo-div
 	margin-top 40px
 .subtitle-landing
-	color #757575
+	color #424242
 .landing-btn-div
 	margin-top 30px

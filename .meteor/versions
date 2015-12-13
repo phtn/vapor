@@ -57,6 +57,7 @@ fortawesome:fontawesome@4.5.0
 fourseven:scss@3.3.3_3
 geojson-utils@1.0.4
 google@1.1.7
+hedcet:touch-swipe@1.6.6
 hot-code-push@1.0.0
 html-tools@1.0.5
 htmljs@1.0.5

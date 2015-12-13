@@ -1,0 +1,23 @@
+template(name='adminOrders')
+	div.container-fluid.orders-div
+		div.container-fluid.text-center.orders-panel
+			span.orders-panel-label#orders-count Orders : &nbsp;&nbsp;&nbsp; #{ordersCount}
+			span.orders-panel-label#pickup For Pick-up
+			span.orders-panel-label#delivery For Delivery
+			span.orders-panel-label#completed Completed 
+			span.orders-panel-label#all All
+		div.list-group
+			+each orders
+				div.list-group-item
+					div.row-action-primary
+						span(class='#{type}')
+					div.row-content
+						div.action-secondary#done
+							span.ion-ios-paper
+						h6.name-h6.list-group-item-heading #{name} &nbsp;&nbsp;&nbsp;
+							span
+									i.ion-android-call
+							span &nbsp;	7072056478
+						span $ #{amount} &nbsp;&nbsp;
+				hr
+				

@@ -11,7 +11,7 @@ Template.nav.rendered = () => {
 	});
 
 // FIRST NAME
-	if (Meteor.userId() != null) {
+	if (Meteor.userId() !== null) {
 		Session.setPersistent('firstName', Meteor.user().profile.name )
 	}
 }

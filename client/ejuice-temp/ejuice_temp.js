@@ -62,7 +62,20 @@ Template.ejuiceTemp.events({
 	},
 	'click #add-to-cart-ejuice' () {
 		if (Meteor.userId() !== null) {
+		
+		// CART	
 			Meteor.call('addEjuiceToCart',
+			Meteor.userId(), 
+			Session.get('ejuice-id'), 
+			Session.get('ejuice-name'), 
+			Session.get('ejuice-price'), 
+			Session.get('ejuice-url'), 
+			Session.get('ejuice-size'), 
+			Session.get('ejuice-nicotine-level'), 
+			'ion-waterdrop');
+		
+		// CART SUBMIT	
+			Meteor.call('addEjuiceToCartSubmit',
 			Meteor.userId(), 
 			Session.get('ejuice-id'), 
 			Session.get('ejuice-name'), 

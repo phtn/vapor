@@ -30,7 +30,19 @@ Template.modsTemp.events({
 	},
 	'click #add-to-cart-mod' () {
 		if (Meteor.userId() !== null) {
+
+		//CART
 			Meteor.call('addModToCart', 
+				Meteor.userId(),
+				Session.get('mod-id'),
+				Session.get('mod-name'), 
+				Session.get('mod-desc'), 
+				Session.get('mod-kit'), 
+				Session.get('mod-price'), 
+				'ion-ios-gear')
+
+		//CART SUBMIT
+			Meteor.call('addModToCartSubmit', 
 				Meteor.userId(),
 				Session.get('mod-id'),
 				Session.get('mod-name'), 
@@ -46,7 +58,7 @@ Template.modsTemp.events({
 			  icon: 'ion-android-checkmark-circle'
 			});
 		} else {
-			FlowRouter.go('/login')
+				FlowRouter.go('/login')
 		}
 	}
 })

@@ -28,3 +28,8 @@ Meteor.publish('showTrimsImages', ()=> {
 Meteor.publish('userData', ()=> {
 	return Meteor.users.find({}, {fields: {profile: 1}})
 });
+
+// ORDES
+Meteor.publish('showOrders', ()=>{
+	return Orders.find()
+})

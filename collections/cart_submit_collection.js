@@ -1,0 +1,1 @@
+CartSubmit = new Mongo.Collection('cart-submit');

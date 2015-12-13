@@ -1,7 +1,7 @@
 template(name='cart')
 	div.container-fluid.cart-div.up-animate
 		div.list-group
-			each cartItems
+			+each cartItems
 				div.list-group-item
 					div.row-action-primary
 						span(class='#{type}')
@@ -30,9 +30,9 @@ template(name='cart')
 				span.pull-left Total: 
 				span.pull-right
 					strong $ #{total}
-
+		hr.hr-dark
 		div.container-fluid.text-center.checkout-div
-			button.btn.btn-material-purple-800.up-animate#checkout PAY ON PICK UP &nbsp;&nbsp;
+			button.btn.btn-material-purple-800.up-animate#pay-on-pickup PAY ON PICK UP &nbsp;&nbsp;
 				span.ion-bag
 		p.or.text-center OR
 		div.container-fluid.text-center

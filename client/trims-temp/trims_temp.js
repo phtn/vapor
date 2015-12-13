@@ -30,7 +30,19 @@ Template.trimsTemp.events({
 	},
 	'click #add-to-cart-trim' () {
 		if (Meteor.userId() !== null) {
+
+		// CART	
 			Meteor.call('addTrimToCart', 
+				Meteor.userId(),
+				Session.get('trim-id'),
+				Session.get('trim-name'), 
+				Session.get('trim-desc'), 
+				Session.get('trim-kit'), 
+				Session.get('trim-price'), 
+				'fa fa-plug')
+
+		// CART	SUBMIT
+			Meteor.call('addTrimToCartSubmit', 
 				Meteor.userId(),
 				Session.get('trim-id'),
 				Session.get('trim-name'), 
