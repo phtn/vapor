@@ -27,8 +27,11 @@ Template.login.rendered = ()=> {
 				FlowRouter.go('/' + Session.get('current-temp-page'))
 			} else if (Session.get('current-temp-page') === 'trims-temp') {
 				FlowRouter.go('/' + Session.get('current-temp-page'))
+			} else {
+				FlowRouter.go('/' + Session.get('current-temp-page'))
 			}
-			
+		
+				
 
 		// ALERT
 			Bert.alert({

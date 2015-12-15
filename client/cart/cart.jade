@@ -22,7 +22,12 @@ template(name='cart')
 					strong $ #{subtotal}
 			br
 			p.total-label
-				span.pull-left Tax (8%):  
+				span.pull-left Shipping:  
+				span.pull-right
+					strong $ 4.00
+			br
+			p.total-label
+				span.pull-left Tax (6%):  
 				span.pull-right
 					strong $ #{tax}
 			br
@@ -32,12 +37,9 @@ template(name='cart')
 					strong $ #{total}
 		hr.hr-dark
 		div.container-fluid.text-center.checkout-div
-			button.btn.btn-material-purple-800.up-animate#pay-on-pickup PAY ON PICK UP &nbsp;&nbsp;
-				span.ion-bag
-		p.or.text-center OR
-		div.container-fluid.text-center
-			img(src='https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif').paypal
-
+			button.btn.btn-material-purple-800.up-animate#checkout CHECKOUT &nbsp;&nbsp;
+				span.ion-log-out
+		
 	else
 		div.container-fluid.text-center.empty-cart
 			h5 YOUR CART IS EMPTY

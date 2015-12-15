@@ -1,10 +1,10 @@
 template(name='adminOrders')
 	div.container-fluid.orders-div
 		div.container-fluid.text-center.orders-panel
-			span.orders-panel-label#orders-count Orders : &nbsp;&nbsp;&nbsp; #{ordersCount}
-			span.orders-panel-label#pickup For Pick-up
+			span.orders-panel-label#orders-count Orders : &nbsp;&nbsp;&nbsp; 
+				strong #{ordersCount}
 			span.orders-panel-label#delivery For Delivery
-			span.orders-panel-label#completed Completed 
+			span.orders-panel-label#completed Completed
 			span.orders-panel-label#all All
 		div.list-group
 			+each orders
@@ -13,11 +13,53 @@ template(name='adminOrders')
 						span(class='#{type}')
 					div.row-content
 						div.action-secondary#done
-							span.ion-ios-paper
+							a(data-toggle='modal' data-ripple-color="#000" data-target='#orders-list')
+								span.ion-ios-paper
 						h6.name-h6.list-group-item-heading #{name} &nbsp;&nbsp;&nbsp;
 							span
 									i.ion-android-call
-							span &nbsp;	7072056478
+							span &nbsp;	#{phone} &nbsp;&nbsp;
+							span
+									i.ion-android-mail
+							span &nbsp;	#{email} &nbsp;&nbsp;
 						span $ #{amount} &nbsp;&nbsp;
 				hr
+
+	div.container-fluid
+		div.modal.backdrop.fade#orders-list
+			div.modal-dialog
+				div.modal-content
+					div.modal-header
+						button(type='button' data-dismiss='modal' aria-hidden='true').close
+									span.ion-close-round
+								h4.modal-title Orders List
+							div.modal-body
+								br
+								br
+								div.module-div
+									p Customer &nbsp; #{customer}
+									hr
+									+each items
+										p
+											span(class='#{type}')
+											span.list-item-label #{name}
+											span.list-item-label $ #{price}
+											span.list-item-label #{size}
+											span.list-item-label #{nic}
+								br
+								div.module-div
+									+with profile
+										p Shipping Address &nbsp;&nbsp;&nbsp; 
+											span.ion-paper-airplane 
+										hr
+										p
+											span.list-item-label #{address}
+										p
+											span.list-item-label #{city}
+										p
+											span.list-item-label #{state}, #{zip}
+								
+								button.btn.btn-info#paid done
+
+
 				

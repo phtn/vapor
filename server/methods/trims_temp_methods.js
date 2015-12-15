@@ -12,7 +12,7 @@ Meteor.methods({
 		})
 	},
 	addTrimToCartSubmit (owner, id, name, desc, kit, price, type) {
-		Cart.insert({
+		CartSubmit.insert({
 			owner: owner,
 			item: id,
 			name: name,

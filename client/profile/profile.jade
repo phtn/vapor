@@ -1,27 +1,38 @@
 template(name='profile')
-	div.container-fluid.text-center.profile-div
-		div.col-md-6
-			div.panel.panel-material-purple-700
+	div.container-fluid.profile-div
+			div.panel.panel-material-purple-700.text-center
 				div.panel-heading
 					h5.panel-title 
-						span.ion-information-circled &nbsp;&nbsp;&nbsp;
-						span PERSONAL INFO
+						span.ion-gear-a &nbsp;&nbsp;&nbsp;
+						span PROFILE SETTINGS
 				div.panel-body
-					div.module-div
-						p Name
-							hr
-		div.col-md-6
-			div.panel.panel-material-purple-700
-				div.panel-heading
-					h5.panel-title 
-						span.ion-location &nbsp;&nbsp;&nbsp;
-						span SHIPPING ADDRESS
-				div.panel-body
-					div.module-div
-						p Address
-							hr
+					
+					div.module-div.col-md-5.text-left.profile-module
+						span.ion-ios-person &nbsp;&nbsp;&nbsp;
+						span.module-title PERSONAL INFO
+						hr
+						input(type='text' placeholder='Name').form-control#profile-name
+						br
+						input(type='number' placeholder='Phone').form-control#profile-phone
+						br
+						input(type='email' placeholder='Email').form-control#profile-email
 
-		button.btn.btn-danger#logout
+					div.module-div.col-md-5.text-left.profile-module
+						span.ion-android-pin &nbsp;&nbsp;&nbsp;
+						span.module-title SHIPPING ADDRESS
+						hr
+						input(type='text' placeholder='Address').form-control#profile-address
+						br
+						input(type='text' placeholder='City').form-control#profile-city
+						br
+						input(type='text' placeholder='State').form-control#profile-state
+						br
+						input(type='number' placeholder='Zip').form-control#profile-zip
+
+					button.btn.btn-info.text-center#save-profile SAVE
+
+		button.btn.btn-danger.text-center#logout
+			span.ion-ios-close &nbsp;&nbsp;&nbsp;
 			span 
 				strong LOGOUT
 			

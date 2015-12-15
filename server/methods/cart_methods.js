@@ -14,7 +14,7 @@ Meteor.methods({
 	removeItemFromCartSubmit(item) {
 		CartSubmit.remove({item: item})
 	},
-	removeAfterSubmit () {
-		Cart.remove({})
+	removeAfterSubmit (owner) {
+		Cart.remove({owner: owner})
 	}
 })

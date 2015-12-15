@@ -24,7 +24,7 @@ Meteor.methods({
 		})
 	},
 	updateEjuice (id, name, desc, url, editedAt) {
-		Ejuice.update({_id: id}, 
+		Ejuices.update({_id: id}, 
 		{$set: {
 			name: name,
 			desc: desc,
@@ -43,7 +43,7 @@ Meteor.methods({
 		})
 	},
 	removeEjuiceAdmin (id) {
-		Ejuice.remove({_id: id})
+		Ejuices.remove({_id: id})
 	},
 	removeSizeAdmin (id) {
 		BottleSizes.remove({_id: id})

@@ -6,19 +6,22 @@ Template.cart.helpers({
 		return Cart.find({owner: Meteor.userId()})
 	},
 	subtotal () {
+		// SHIPPING
+		Session.setPersistent('shipping-rate', 4)
+		// SUBTOTAL
 		var subtotal = 0;
 		Cart.find({owner: Meteor.userId()}).map((doc) => {
 		  	subtotal += doc.price;
-			Session.setPersistent('subtotal', subtotal.toFixed(2));
+			Session.setPersistent('subtotal', parseFloat(subtotal.toFixed(2)));
 		});
 		return Session.get('subtotal')
 	},
 	tax () {
-		Session.setPersistent('tax',(Session.get('subtotal') * .08).toFixed(2));
+		Session.setPersistent('tax',((Session.get('subtotal') + Session.get('shipping-rate')) * .06).toFixed(2));
 		return Session.get('tax');
 	},
 	total () {
-		var total = parseFloat(Session.get('subtotal')) + parseFloat(Session.get('tax'));
+		var total = parseFloat(Session.get('subtotal')) + parseFloat(Session.get('tax')) + parseFloat(Session.get('shipping-rate'));
 		Session.setPersistent('total', total.toFixed(2));
 		return Session.get('total')
 	},
@@ -39,17 +42,33 @@ Template.cart.events({
 		  icon: 'ion-ios-minus'
 		});
 	},
-	'click #pay-on-pickup' () {
-		Meteor.call('addToOrders',
-			Meteor.userId(),
-			Meteor.user().profile.name,
-			'phone',
-			'email',
-			'address',
-			Session.get('total'),
-			'for pick up',
-			'ion-bag',
-		)
+	'click #checkout' () {
+	
+	// INSERT TO ORDERS
+		var file = Profiles.findOne({owner: Meteor.userId()})
+		if (Profiles.find({owner: Meteor.userId(), address: {$ne: null}}).count() !== 0) {
+			Meteor.call('addToOrders',
+				Meteor.userId(),
+				Meteor.user().profile.name,
+				file.phone,
+				file.email,
+				Session.get('total'),
+				'for pick up',
+				'ion-bag',
+			);
+
+		// DELETE CART
+			Meteor.call('removeAfterSubmit', Meteor.userId());
+
+		// ROUTE
+			FlowRouter.go('/order-submitted')
+
+		} else {
+			FlowRouter.go('/profile')
+		}
+		
+
+	
 	}
 });
 

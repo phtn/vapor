@@ -12,7 +12,7 @@ Template.nav.rendered = () => {
 
 // FIRST NAME
 	if (Meteor.userId() !== null) {
-		Session.setPersistent('firstName', Meteor.user().profile.name )
+		Session.setPersistent('firstName', Meteor.user().profile.name)
 	}
 }
 
@@ -27,8 +27,8 @@ Template.nav.events({
 	'click #mods' () {
 		FlowRouter.go('/mods')
 	},
-	'click #trims' () {
-		FlowRouter.go('/trims')
+	'click #faqs' () {
+		FlowRouter.go('/faqs')
 	},
 	'click #social' () {
 		//FlowRouter.go('/social')

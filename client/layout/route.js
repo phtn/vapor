@@ -48,6 +48,13 @@ FlowRouter.route('/mods-temp', {
 	}
 });
 
+FlowRouter.route('/faqs', {
+	name: 'Vaping FAQs',
+	action(params) {
+		renderThisTemplate('faqs')
+	}
+});
+
 FlowRouter.route('/trims', {
 	name: 'Trims',
 	action(params) {
@@ -80,5 +87,12 @@ FlowRouter.route('/profile', {
 	name: 'Profile',
 	action(params) {
 		renderThisTemplate('profile')
+	}
+});
+
+FlowRouter.route('/order-submitted', {
+	name: 'Thanks',
+	action(params) {
+		renderThisTemplate('thanks')
 	}
 });

@@ -19,3 +19,8 @@ Meteor.publish('showCart', ()=> {
 Meteor.publish('showCartSubmit', ()=> {
 	return CartSubmit.find({})
 });
+
+// PROFILES
+Meteor.publish('showProfile', ()=> {
+	return Profiles.find({})
+});
