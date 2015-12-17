@@ -4,14 +4,18 @@ template(name='home')
 		div(data-src='/assets/img/carousel/c4.jpg')
 	div.welcome.text-center
 		h3 Welcome to VAPORTIMME NEW HOPE!
-		p.welcome-p Vaportimme is the preferred Vapor E- Cigarette store in New Hope. We offer 99.9% VG juices made here in Bucks County.
+		p.welcome-p 
+			span Vaportimme is the preferred Vapor E- Cigarette store in New Hope. 
+			br
+			span We offer 99.9% VG juices made here in Bucks County.
 		br
 		p.call-us 
-			span Call us to set an appointment! &nbsp;
-			span.ion-android-call &nbsp;
-			span 215-693-1905
+			span Call us today to set an appointment!
+			
 		p
-			a.btn.btn-default.btn-material-purple-800.text-center#learn-more LEARN MORE
+			a(href='tel:+1-215-693-1905').btn.btn-default.btn-material-purple-800.text-center#call-us
+				span.ion-android-call &nbsp;&nbsp;&nbsp;&nbsp;
+				span 215 - 693 - 1905
 	div.container-fluid.text-center.footer
 			span.terms-policy#terms Terms of Use
 			span.terms-policy#privacy Privacy Policy

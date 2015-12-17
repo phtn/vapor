@@ -30,8 +30,8 @@ Template.nav.events({
 	'click #faqs' () {
 		FlowRouter.go('/faqs')
 	},
-	'click #social' () {
-		//FlowRouter.go('/social')
+	'click #findus' () {
+		FlowRouter.go('/findus')
 	},
 	'click #cart' () {
 		FlowRouter.go('/cart')

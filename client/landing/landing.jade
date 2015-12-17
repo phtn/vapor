@@ -1,11 +1,19 @@
 template(name='landing')
 	div.container-fluid.landing-body
 		div.container-fluid.text-center.logo-div
-			img(src='/assets/img/vaportimme-white-logo.png')
+			img(src='/assets/img/vaportimme-white-logo.png').bounce
 
 		div.container-fluid.text-center
-			h3.subtitle-landing CUSTOM VAPE STORE IN NEW HOPE
+			h3.subtitle-landing.to-right-delay CUSTOM VAPE STORE IN NEW HOPE
 
-		div.container-fluid.text-center.landing-btn-div
-			a(href='/home').btn.btn-material-purple-800 
+		div.container-fluid.text-center
+			p.disclaimer.to-left-delay
+				span The products on this website are intended for adults only. 
+				br 
+				span By entering this website you verify that you are over the 
+				br
+				span age of 18 and are of legal smoking age.
+
+		div.container-fluid.text-center.landing-btn-div.to-top-delay
+			a(href='/home').btn.btn-material-purple-800
 				h4 YES, I'M 18 OR OLDER

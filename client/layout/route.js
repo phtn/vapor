@@ -55,10 +55,10 @@ FlowRouter.route('/faqs', {
 	}
 });
 
-FlowRouter.route('/trims', {
-	name: 'Trims',
+FlowRouter.route('/findus', {
+	name: 'Find Us',
 	action(params) {
-		renderThisTemplate('trims')
+		renderThisTemplate('findus')
 	}
 });
 

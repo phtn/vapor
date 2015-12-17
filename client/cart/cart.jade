@@ -1,50 +1,58 @@
 template(name='cart')
 	div.container-fluid.cart-div.up-animate
-		div.list-group
-			+each cartItems
-				div.list-group-item
-					div.row-action-primary
-						span(class='#{type}')
-					div.row-content
-						div.action-secondary#trash
-							span.ion-ios-minus
-						h6.name-h6.list-group-item-heading #{name}
-						span $ #{price} &nbsp;&nbsp;
-						span #{size} &nbsp;&nbsp;
-						span #{nic} &nbsp;
-				hr
-	if cartNotEmpty
-
-		div.container-fluid.total-div.text-center.up-animate
-			p.total-label
-				span.pull-left Subtotal:  
-				span.pull-right
-					strong $ #{subtotal}
-			br
-			p.total-label
-				span.pull-left Shipping:  
-				span.pull-right
-					strong $ 4.00
-			br
-			p.total-label
-				span.pull-left Tax (6%):  
-				span.pull-right
-					strong $ #{tax}
-			br
-			p.total-label
-				span.pull-left Total: 
-				span.pull-right
-					strong $ #{total}
-		hr.hr-dark
-		div.container-fluid.text-center.checkout-div
-			button.btn.btn-material-purple-800.up-animate#checkout CHECKOUT &nbsp;&nbsp;
-				span.ion-log-out
+		if cartNotEmpty
+			div.panel.panel-material-purple-700
+					div.panel-heading.text-center
+						h5.panel-title 
+							span.ion-ios-cart &nbsp;&nbsp;&nbsp;
+							span CART &nbsp;
+							span #{cartCount}
+					div.panel-body
+						div.list-group
+							+each cartItems
+								div.list-group-item
+									div.row-action-primary
+										span(class='#{type}')
+									div.row-content
+										div.action-secondary#trash
+											span.ion-ios-minus
+										h6.name-h6.list-group-item-heading #{name}
+										span $ #{price} &nbsp;&nbsp;
+										span #{size} &nbsp;&nbsp;
+										span #{nic} &nbsp;
+								hr
 		
-	else
-		div.container-fluid.text-center.empty-cart
-			h5 YOUR CART IS EMPTY
-			span.ion-ios-cart-outline
-			H5 GET YOUR VAPE NOW!
-		div.container-fluid.text-center.up-animate
-			a(href='/ejuice').btn.btn-material-purple-800 E-JUICE
-			a(href='/mods').btn.btn-material-purple-800 MODS
+
+			div.container-fluid.total-div.text-center.up-animate
+				p.total-label
+					span.pull-left Subtotal:  
+					span.pull-right
+						strong $ #{subtotal}
+				br
+				p.total-label
+					span.pull-left Shipping:  
+					span.pull-right
+						strong $ 4.00
+				br
+				p.total-label
+					span.pull-left Tax (6%):  
+					span.pull-right
+						strong $ #{tax}
+				br
+				p.total-label
+					span.pull-left Total: 
+					span.pull-right
+						strong $ #{total}
+			hr.hr-dark
+			div.container-fluid.text-center.checkout-div
+				button.btn.btn-material-purple-800.up-animate#checkout CHECKOUT &nbsp;&nbsp;
+					span.ion-log-out
+			
+		else
+			div.container-fluid.text-center.empty-cart
+				h5 YOUR CART IS EMPTY
+				span.ion-ios-cart-outline
+				H5 GET YOUR VAPE NOW!
+			div.container-fluid.text-center.up-animate
+				a(href='/ejuice').btn.btn-material-purple-800 E-JUICE
+				a(href='/mods').btn.btn-material-purple-800 MODS

@@ -29,11 +29,14 @@ template(name='profile')
 						br
 						input(type='number' placeholder='Zip').form-control#profile-zip
 
-					button.btn.btn-info.text-center#save-profile SAVE
-
-		button.btn.btn-danger.text-center#logout
-			span.ion-ios-close &nbsp;&nbsp;&nbsp;
-			span 
-				strong LOGOUT
+					button.profile-btn.btn.btn-info.text-center#save-profile
+						span.ion-android-checkmark-circle &nbsp;&nbsp;&nbsp;
+						span
+							strong SAVE
+					br
+					button.profile-btn.btn.btn-danger.text-center#logout
+						span.ion-android-cancel &nbsp;&nbsp;&nbsp;
+						span 
+							strong LOGOUT
 			
 				
