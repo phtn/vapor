@@ -49,7 +49,7 @@ Template.cart.events({
 		if (Profiles.find({owner: Meteor.userId(), address: {$ne: null}}).count() !== 0) {
 			Meteor.call('addToOrders',
 				Meteor.userId(),
-				Meteor.user().profile.name,
+				file.name,
 				file.phone,
 				file.email,
 				Session.get('total'),

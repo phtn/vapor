@@ -1,11 +1,34 @@
 template(name='login')
 	div.container-fluid.text-center.login-div
-		div.panel.panel-material-purple-700.login-panel
+		div.panel.panel-material-purple-700.login-panel.zoom-out
 			div.panel-heading
 				h5.panel-title 
 					span.ion-person &nbsp;&nbsp;&nbsp;
 					span SIGN-IN WITH
 			div.panel-body
-				button.btn.btn-danger#google
+				button.btn.btn-danger.zoom-out#google
 					span.fa.fa-google &nbsp;&nbsp;&nbsp;
 					span google
+				br
+
+				div.or.col-xs-4
+					hr
+				div.or.col-xs-2#or
+					span OR
+				div.or.col-xs-4
+					hr
+
+				button.btn.btn-material-blue-800.zoom-out#facebook
+					span.fa.fa-facebook &nbsp;&nbsp;&nbsp;
+					span Facebook
+
+		div.container-fluid.text-center
+			h6 follow us on
+
+			a(href='https://twitter.com/vaportimme').social-link
+				span.fa.fa-twitter
+			a(href='https://www.facebook.com/vaportimmenewhope/').social-link
+				span.fa.fa-facebook
+			a(href='http://instagram.com/vaportimme?ref=badge').social-link
+				span.fa.fa-instagram
+

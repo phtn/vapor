@@ -10,6 +10,15 @@ Template.login.events({
 				// ERROR
 			}
 		});
+	},
+	'click #facebook' () {
+		Meteor.loginWithFacebook({
+			requestPermission: ['email','profile']
+		}, function(err) {
+			if (err) {
+				// ERROR
+			}
+		});
 	}
 });
 
