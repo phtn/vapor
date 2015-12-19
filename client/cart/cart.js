@@ -53,7 +53,7 @@ Template.cart.events({
 				file.phone,
 				file.email,
 				Session.get('total'),
-				'for pick up',
+				'new order',
 				'ion-bag',
 			);
 
@@ -65,6 +65,12 @@ Template.cart.events({
 
 		} else {
 			FlowRouter.go('/profile')
+			Bert.alert({
+			  type: 'must-signin',
+			  message: 'Enter Complete Shipping Address.',
+			  style: 'growl-top-right',
+			  icon: 'ion-ios-location'
+			});
 		}
 		
 
@@ -72,6 +78,7 @@ Template.cart.events({
 	}
 });
 
-Tracker.autorun(function() {
-	
-});
+// RENDERED
+Template.cart.rendered = ()=> {
+	Session.setPersistent('go-back-to-cart', 'cart')
+}

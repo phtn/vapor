@@ -1,18 +1,19 @@
 template(name='adminOrders')
 	div.container-fluid.orders-div
 		div.container-fluid.text-center.orders-panel
-			span.orders-panel-label#orders-count Orders : &nbsp;&nbsp;&nbsp; 
-				strong #{ordersCount}
-			span.orders-panel-label#delivery For Delivery
-			span.orders-panel-label#completed Completed
-			span.orders-panel-label#all All
+			span.orders-panel-label#orders-count NEW ORDERS : &nbsp;&nbsp;&nbsp; 
+				strong #{newOrdersCount}
+			span.orders-panel-label#delivery For Delivery : &nbsp;&nbsp;&nbsp;
+				strong #{forDeliveryCount}
+			span.orders-panel-label#completed Completed : &nbsp;&nbsp;&nbsp;
+				strong #{completedCount}
 		div.list-group
 			+each orders
 				div.list-group-item
 					div.row-action-primary
 						span(class='#{type}')
 					div.row-content
-						div.action-secondary#done
+						div.action-secondary#view-order-list
 							a(data-toggle='modal' data-ripple-color="#000" data-target='#orders-list')
 								span.ion-ios-paper
 						h6.name-h6.list-group-item-heading #{name} &nbsp;&nbsp;&nbsp;
@@ -25,7 +26,7 @@ template(name='adminOrders')
 						span $ #{amount} &nbsp;&nbsp;
 				hr
 
-	div.container-fluid
+	div.container-fluid.modal-div
 		div.modal.backdrop.fade#orders-list
 			div.modal-dialog
 				div.modal-content
@@ -59,7 +60,7 @@ template(name='adminOrders')
 										p
 											span.list-item-label #{state}, #{zip}
 								
-								a(type='button' data-dismiss='modal' aria-hidden='true').btn.btn-info#paid done
+								a(type='button' data-dismiss='modal' aria-hidden='true').btn.btn-info#action #{action}
 
 
 				

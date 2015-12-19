@@ -9,7 +9,7 @@ Template.mods.events({
 		Session.setPersistent('mod-kit',this.kit);
 		Session.setPersistent('mod-price',this.price);
 
-		FlowRouter.go('/mods-temp')
+		//FlowRouter.go('/mods-temp')
 	}
 });
 
@@ -20,5 +20,8 @@ Template.mods.helpers({
 	},
 	image () {
 		return ModsImages.findOne({modId: this._id})
+	},
+	img () {
+		return ModsImages.findOne({modId: Session.get('mod-id')})
 	}
 });

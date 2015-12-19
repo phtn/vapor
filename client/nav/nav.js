@@ -40,7 +40,11 @@ Template.nav.events({
 		FlowRouter.go('/login')
 	},
 	'click #user' () {
-		FlowRouter.go('/profile')
+		FlowRouter.go('/profile');
+		Session.setPersistent('go-back-to-cart', null)
+	},
+	'click #user-dd' () {
+		Session.setPersistent('go-back-to-cart', null)
 	}
 });
 // SUBSCRIBE

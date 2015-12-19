@@ -19,10 +19,21 @@ Template.profile.events({
 
 		if (Profiles.find({owner: Meteor.userId()}).count() === 0 ) {
 			Meteor.call('insertProfile', Meteor.userId(), $('#profile-name').val(), $('#profile-phone').val(), $('#profile-email').val(), Session.get('profile-address'), $('#profile-city').val(), $('#profile-state').val(), $('#profile-zip').val())
-			console.log('no profile')
+			if (Session.get('go-back-to-cart') === 'cart') {
+				FlowRouter.go('/cart')
+			}
 		} else {
-			Meteor.call('updateProfile', Meteor.userId(), $('#profile-name').val(), $('#profile-phone').val(), $('#profile-email').val(), Session.get('profile-address'), $('#profile-city').val(), $('#profile-state').val(), $('#profile-zip').val())
+			Meteor.call('updateProfile', Meteor.userId(), $('#profile-name').val(), $('#profile-phone').val(), $('#profile-email').val(), Session.get('profile-address'), $('#profile-city').val(), $('#profile-state').val(), $('#profile-zip').val());
+			if (Session.get('go-back-to-cart') === 'cart') {
+				FlowRouter.go('/cart')
+			}
 		}
+		Bert.alert({
+		  	type: 'info',
+		  	message: 'Shipping Address Saved.',
+		  	style: 'growl-top-right',
+		  	icon: 'ion-checkmark-round'
+		});
 	}
 });
 

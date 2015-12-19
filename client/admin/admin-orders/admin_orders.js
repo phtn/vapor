@@ -4,27 +4,46 @@ Meteor.subscribe('showCartSubmit');
 
 // EVENTS
 Template.adminOrders.events({
-	'click #done' () {
+	'click #view-order-list' () {
 		//console.log(this);
 		Session.setPersistent('order-list-id', this._id);
 		Session.setPersistent('order-list-owner', this.owner);
 		Session.setPersistent('order-list-cust', this.name)
 	},
-	'click #paid' () {
-		Meteor.call('removeAfterPay', Session.get('order-list-id'), Session.get('order-list-owner'))
+	'click #action' () {
+		if (Session.get('order-status') === 'new order') {
+			Meteor.call('setForDelivery', Session.get('order-list-id'))
+		} else if (Session.get('order-status') === 'for delivery') {
+			Meteor.call('setOrderCompleted', Session.get('order-list-id'))
+		} 
 	},
 	'click .it' () {
 		console.log(this.owner)
+	},
+	'click #orders-count' () {
+		Session.setPersistent('order-status', 'new order')
+	},
+	'click #delivery' () {
+		Session.setPersistent('order-status', 'for delivery')
+	},
+	'click #completed' () {
+		Session.setPersistent('order-status', 'order fulfilled')
 	}
 });
 
 // HELPERS
 Template.adminOrders.helpers({
 	orders () {
-		return Orders.find()
+		return Orders.find({status: Session.get('order-status')})
 	},
-	ordersCount () {
-		return Orders.find().count()
+	newOrdersCount () {
+		return Orders.find({status: 'new order'}).count()
+	},
+	forDeliveryCount () {
+		return Orders.find({status: 'for delivery'}).count()
+	},
+	completedCount () {
+		return Orders.find({status: 'order fulfilled'}).count()
 	},
 	customer () {
 		return Session.get('order-list-cust')
@@ -34,6 +53,19 @@ Template.adminOrders.helpers({
 	},
 	profile () {
 		return Profiles.findOne({owner: Session.get('order-list-owner')})
+	},
+	action () {
+		if (Session.get('order-status') === 'new order') {
+			return 'Send for Delivery'
+		} else if (Session.get('order-status') === 'for delivery') {
+			return 'Set Order as Fulfilled'
+		} else {
+			return 'Send Record to Archives'
+		}
 	}
 
 });
+
+Template.adminOrders.rendered = ()=> {
+	Session.setPersistent('order-status', 'new order')
+}

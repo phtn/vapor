@@ -101,7 +101,11 @@ Template.adminEjuice.events({
 	},
 	'click #save-ejuice-btn' () {
 		// Update edit
-		Meteor.call('updateEjuice', Session.get('current-ejuice-id'), $('#edit-ejuice-name').val(), $('#edit-ejuice-desc').val(), $('#edit-ejuice-url').val())
+		Meteor.call('updateEjuice', 
+			Session.get('current-ejuice-id'), 
+			$('#edit-ejuice-name').val(), 
+			$('#edit-ejuice-desc').val())
+
 		// Alert Notification
 		Bert.alert({
 		  type: 'admin-edit',
@@ -132,7 +136,10 @@ Template.adminEjuice.events({
 	},
 	'click #save-size-btn' () {
 		// Update Size & Price
-		Meteor.call('updateSizePrice', Session.get('current-size-id'), $('#edit-bottle-size').val(), $('#edit-bottle-price').val())
+		Meteor.call('updateSizePrice', 
+			Session.get('current-size-id'), 
+			$('#edit-bottle-size').val(), 
+			$('#edit-bottle-price').val())
 		// Alert Notification
 		Bert.alert({
 		  type: 'admin-edit',

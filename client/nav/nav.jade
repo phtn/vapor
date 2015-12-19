@@ -8,7 +8,7 @@ template(name='nav')
 				ul.nav.nav-tabs.nav-justified.lg-screen
 					li#home
 						a(href='/home').btn.btn-default.btn-flat.links
-							span.ion-ios-home &nbsp; HOME
+							span.ion-ios-home.helveticas &nbsp; HOME
 					li#e-juice
 						a(href='/ejuice').btn.btn-default.btn-flat.links
 							span.ion-waterdrop &nbsp;  ONLINE STORE
@@ -25,8 +25,8 @@ template(name='nav')
 							span.ion-location &nbsp;  FIND US
 					li#cart
 						a(href='/cart').btn.btn-default.btn-flat.links
-							span.ion-ios-cart &nbsp;  CART
-							span.badge.badge-default #{countCart}
+							span.ion-ios-cart &nbsp;  CART &nbsp;
+							span.cart-count #{countCart}
 					if currentUser
 						li#user
 							a.btn.btn-default.btn-flat.links
@@ -42,45 +42,46 @@ template(name='nav')
 							span
 								i.ion-navicon.menu-icon
 						ul(arialabelledby='menu').dropdown-menu
+							br
 							li
 								a(href='/home')
 									span
 										i.ion-ios-home
 									span HOME
-							hr
+							br
 							li
 								a(href='/ejuice')
 									span
 										i.ion-waterdrop
 									span ONLINE STORE
-							hr
+							br
 							li
 								a(href='/mods')
 									span
 										i.fa.fa-plug
 									span EQUIPMENT
-							hr
+							br
 							li
 								a(href='/faqs')
 									span
 										i.ion-help-circled
 									span VAPING FAQS
-							hr
+							br
 							li
 								a(href='/findus')
 									span
 										i.ion-location
 									span FIND US
-							hr
+							br
 							li
 								a(href='/cart')
 									span
 										i.ion-ios-cart
 									span CART
 									span.badge.badge-default #{countCart}
-							hr
+							br
 							if currentUser
-								li
+								li#user-dd
 									a(href='/profile')
 										span.ion-person
 										span #{user}

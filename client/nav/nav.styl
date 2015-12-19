@@ -1,45 +1,56 @@
+@font-face
+	font-family Alpha-Echo
+	src url('/fonts/alpha_echo.ttf')
+
 .navbar
-	background-color #BDBDBD !important
+	background-color rgba(0,0,0, 0.7 ) !important
 	margin-bottom 100px
 	//border-bottom 1px solid red
 	height 85px
 .links
 	line-height 4.3em
-	color #6A1B9A !important
+	//color #6A1B9A !important
+	
 	background-color #eee !important
 .navbar-header
 	width 100%
 	margin 0
-	background-color #BDBDBD !important
+	background-color transparent 
 .nav
-	background-color #BDBDBD !important
+	background-color transparent
 ul.nav
 	margin-top 23px
 	li > a > span
-		color #6A1B9A !important
+		color #CE93D8 !important
 		font-weight bold
 		letter-spacing 2px
-		font-family 'Roboto', sans-serif
-		font-weight 300
-ul.nav > li > a > span:hover
-	color #eee
+		font-family 'Alpha Echo', sans-serif
+		//font-weight 300
+ul.nav > li > a:hover
+	span
+		color #eee
 	
 ul.nav > li > a:focus
 	color #9E9E9E !important
 ul.mobile-screen
 	background-color transparent !important
 span.badge
-	color #4A148C !important
+	color #222 !important
 	background-color #E1BEE7 !important
 ul.dropdown-menu
-	//background-color rgba(224, 224, 244, 0.6 )
-	background-image url('/assets/img/bg/symphony.png')
-	background-repeat repeat
+	background-color rgba(0, 0, 0, 0.7 )
+	//background-image url('/assets/img/bg/symphony.png')
+	//background-repeat repeat
 	li > a > span
 		letter-spacing 2px
-		
+	hr
+		border-color transparent
+
 .menu-icon
 	font-size 30px
 	//margin-top -20px
 .focus
 	border-bottom 1px solid #999
+.bert-alert.must-signin
+	color #333
+	background-color #00E676

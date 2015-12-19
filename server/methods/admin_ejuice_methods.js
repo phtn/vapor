@@ -23,22 +23,21 @@ Meteor.methods({
 			editedAt: new Date()
 		})
 	},
-	updateEjuice (id, name, desc, url, editedAt) {
+	updateEjuice (id, name, desc) {
 		Ejuices.update({_id: id}, 
 		{$set: {
 			name: name,
 			desc: desc,
-			url: url,
-			editedAt: editedAt
+			editedAt: new Date()
 			}
 		})
 	},
-	updateSizePrice(id, size, price, editedAt) {
+	updateSizePrice(id, size, price) {
 		BottleSizes.update({_id: id},
 		{$set: {
 			size: size,
 			price: price,
-			editedAt: editedAt
+			editedAt: new Date()
 			}
 		})
 	},

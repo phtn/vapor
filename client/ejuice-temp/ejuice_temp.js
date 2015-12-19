@@ -93,6 +93,12 @@ Template.ejuiceTemp.events({
 			});
 		} else {
 			FlowRouter.go('/login')
+			Bert.alert({
+			  type: 'must-signin',
+			  message: 'You must be signed in to add items to cart.',
+			  style: 'growl-top-right',
+			  icon: 'ion-log-in'
+			});
 		}
 	}
 })

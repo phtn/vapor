@@ -26,6 +26,7 @@ ModSchema = new SimpleSchema({
 	desc: {
 		type: String,
 		label: 'Description',
+		optional: true,
 		autoform: {
 			label: false
 		}
@@ -33,6 +34,7 @@ ModSchema = new SimpleSchema({
 	kit: {
 		type: String,
 		label: 'Kit Includes',
+		optional: true,
 		autoform: {
 			label: false
 		}
@@ -41,6 +43,7 @@ ModSchema = new SimpleSchema({
 		type: Number,
 		decimal: true,
 		label: 'Size',
+		optional: true,
 		autoform: {
 			label: false
 		}

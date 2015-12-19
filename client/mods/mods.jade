@@ -1,8 +1,19 @@
 template(name='mods')
 	div.text-center.mods-div
 		+each mods
-			div.thumbnail.grid-thumbnail.text-center.col-xs-5.col-sm-5.col-md-4.col-lg-3.zoom-out
-				+with image
-					img(src='#{url}' onload='this.style.opacity="1"')
-				h5.name-label #{name}
+			a(data-toggle='modal' data-ripple-color="#000" data-target='#mod-img')
+				div.thumbnail.grid-thumbnail.text-center.col-xs-5.col-sm-5.col-md-4.col-lg-3.zoom-out
+					+with image
+						img(src='#{url}')
+					p.desc #{name}
+
+	div.modal.backdrop.fade.text-center#mod-img
+		div.modal-dialog
+			div.modal-content
+				div.modal-header
+					button(type='button' data-dismiss='modal' aria-hidden='true').close
+						span.ion-close-round
+				div.modal-body
+					+with img
+						img(src='#{url}')
 				
