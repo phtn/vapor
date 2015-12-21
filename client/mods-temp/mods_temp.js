@@ -1,7 +1,7 @@
 
 //RENDERED
 Template.modsTemp.rendered = ()=> {
-	Session.setPersistent('current-temp-page', 'mods-temp');
+	//
 }
 
 // HELPERS

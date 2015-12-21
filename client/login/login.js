@@ -30,12 +30,6 @@ Template.login.rendered = ()=> {
 		if (Meteor.userId() !== null) {
 			if (Session.get('current-temp-page') === undefined) {
 				FlowRouter.go('/profile');	
-			} else if (Session.get('current-temp-page') === 'ejuice-temp') {
-				FlowRouter.go('/' + Session.get('current-temp-page'))
-			} else if (Session.get('current-temp-page') === 'mods-temp') {
-				FlowRouter.go('/' + Session.get('current-temp-page'))
-			} else if (Session.get('current-temp-page') === 'trims-temp') {
-				FlowRouter.go('/' + Session.get('current-temp-page'))
 			} else {
 				FlowRouter.go('/' + Session.get('current-temp-page'))
 			}

@@ -9,11 +9,9 @@ template(name='mods')
 
 	div.modal.backdrop.fade.text-center#mod-img
 		div.modal-dialog
-			div.modal-content
-				div.modal-header
-					button(type='button' data-dismiss='modal' aria-hidden='true').close
-						span.ion-close-round
+			div.modal-content.mod-modal-content
 				div.modal-body
 					+with img
-						img(src='#{url}')
+						a(type='button' data-dismiss='modal' aria-hidden='true')
+							img(src='#{url}')
 				

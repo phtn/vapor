@@ -1,20 +1,101 @@
 template(name='findus')
 	div.container-fluid.findus-div
-		div.col-md-6
-			div.panel.panel-material-purple-700.iframe-panel
-						div.panel-heading.text-center
-							h5.panel-title 
-								span.ion-ios-location &nbsp;&nbsp;&nbsp;
-								span FIND US &nbsp;
-						div.panel-body.text-center.iframe-panel-body
-							iframe(frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:EiYxNSBXIEZlcnJ5IFN0LCBOZXcgSG9wZSwgUEEgMTg5MzgsIFVTQQ&key=AIzaSyBw6uKzbdIVLo3dm4e1Y-zJKl0SQW8vzr8" allowfullscreen)
 
-		div.col-md-6
+		// STORE
+		div.col-md-4
 			div.panel.panel-material-purple-700.store-panel
 						div.panel-heading.text-center
 							h5.panel-title 
 								span.ion-bag &nbsp;&nbsp;&nbsp;
 								span CHECKOUT OUR STORE &nbsp;
 						div.panel-body.text-center.store-panel-body
+							div.find-address-div.col-xs-6
+								p.desc
+									span.ion-location &nbsp;&nbsp;&nbsp;
+									span Address
+								p.desc
+									span 15 W FERRY ST
+									br
+									span NEW HOPE PA, 18938
+								hr
+								p.desc
+									span.ion-android-call &nbsp;&nbsp;&nbsp;
+									span Phone
+								p.desc
+									a(href='tel:+1-215-693-1905')
+										span 215 - 693 - 1906
+							div.find-address-div.col-xs-6
+								img(src='/assets/img/front.jpg' style='width:80%; height:80%')
+
+		// MAP
+		div.col-md-4
+			div.panel.panel-material-purple-700.iframe-panel
+						div.panel-heading.text-center
+							h5.panel-title 
+								span.ion-ios-location &nbsp;&nbsp;&nbsp;
+								span GOOGLE MAPS
+						div.panel-body.text-center.iframe-panel-body
+							iframe(frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:EiYxNSBXIEZlcnJ5IFN0LCBOZXcgSG9wZSwgUEEgMTg5MzgsIFVTQQ&key=AIzaSyBw6uKzbdIVLo3dm4e1Y-zJKl0SQW8vzr8" allowfullscreen)
+
+		div.col-md-4
+			div.panel.panel-material-purple-700.iframe-panel
+						div.panel-heading.text-center
+							h5.panel-title 
+								span.ion-star &nbsp;&nbsp;&nbsp;
+								span OUR FAVORITE LOCAL BUSINESSES
+						div.panel-body.text-center
+
+							// LOGAN INN
+							a(href='http://loganinn.com')
+								img(src='/assets/img/logan.png')
+							br
+							br
+							p.desc
+								span.ion-location &nbsp;&nbsp;&nbsp;
+								span 10 W FERRY STREET
+								br
+								span NEW HOPE, PA 18938
+								br
+								br
+								a(href='tel:+1-215-862-2300')
+									span.ion-android-call &nbsp;&nbsp;&nbsp;
+									span 215-862-2300
+							hr
+							// SQUARE ONE PUB
+							a(href='http://squareonepub.com')
+								h3 SQUARE ONE PUB
+							br
+							p.desc
+								span.ion-location &nbsp;&nbsp;&nbsp;
+								span 15 MARKET PLACE
+								br
+								span NEW HOPE, PA 18938
+								br
+								br 
+								a(href='tel:+1-215-862-2730')
+									span.ion-android-call &nbsp;&nbsp;&nbsp;
+									span 215-862-2730
+							hr
+							// SQUARE ONE PUB
+							a(href='http://www.akasalon.com/')
+								img(src='/assets/img/aka_logo.jpg' style='width:50%; height:50%')
+							br
+							br
+							p.desc
+								span.ion-location &nbsp;&nbsp;&nbsp;
+								span 6610 LOWER YORK RD
+								br
+								span NEW HOPE, PA 18938
+								br
+								br 
+								a(href='tel:+1-215-862-2277')
+									span.ion-android-call &nbsp;&nbsp;&nbsp;
+									span 215-862-2277
+							hr
+
+
+
+
+		
 
 

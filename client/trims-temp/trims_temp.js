@@ -1,7 +1,7 @@
 
 // RENDERED
 Template.trimsTemp.rendered = ()=> {
-	Session.setPersistent('current-temp-page', 'trims-temp');
+	//
 };
 
 // HELPERS
