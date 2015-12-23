@@ -41,13 +41,6 @@ FlowRouter.route('/mods', {
 	}
 });
 
-FlowRouter.route('/mods-temp', {
-	name: "Mods-temp",
-	action(params) {
-		renderThisTemplate('modsTemp')
-	}
-});
-
 FlowRouter.route('/faqs', {
 	name: 'Vaping FAQs',
 	action(params) {
@@ -59,13 +52,6 @@ FlowRouter.route('/findus', {
 	name: 'Find Us',
 	action(params) {
 		renderThisTemplate('findus')
-	}
-});
-
-FlowRouter.route('/trims-temp', {
-	name: 'Trims-temp',
-	action(params) {
-		renderThisTemplate('trimsTemp')
 	}
 });
 
@@ -87,6 +73,13 @@ FlowRouter.route('/profile', {
 	name: 'Profile',
 	action(params) {
 		renderThisTemplate('profile')
+	}
+});
+
+FlowRouter.route('/payments', {
+	name: 'Payments',
+	action(params) {
+		renderThisTemplate('payments')
 	}
 });
 

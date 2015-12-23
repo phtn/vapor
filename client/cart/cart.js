@@ -43,7 +43,25 @@ Template.cart.events({
 		});
 	},
 	'click #checkout' () {
+
+	// CHECK IF SHIPPING ADDRESS IS COMPLETE
+		if (Profiles.find({owner: Meteor.userId(), address: {$ne: null}}).count() !== 0) {
+			
+			FlowRouter.go('/payments')
+
+		} else {
+
+			FlowRouter.go('/profile')
+			// ALERT
+			Bert.alert({
+			  type: 'must-signin',
+			  message: 'Enter Complete Shipping Address.',
+			  style: 'growl-top-right',
+			  icon: 'ion-ios-location'
+			});
+		}
 	
+	/*
 	// INSERT TO ORDERS
 		var file = Profiles.findOne({owner: Meteor.userId()})
 		if (Profiles.find({owner: Meteor.userId(), address: {$ne: null}}).count() !== 0) {
@@ -72,7 +90,9 @@ Template.cart.events({
 			  icon: 'ion-ios-location'
 			});
 		}
-		
+	*/
+
+
 
 	
 	}

@@ -1,0 +1,42 @@
+template(name='payments')
+	div.container-fluid.text-center.payment-div
+		div.panel.panel-material-purple-700.store-panel
+			div.panel-heading.text-center
+				h5.panel-title 
+					span.ion-cash &nbsp;&nbsp;&nbsp;
+					span ADD A PAYMENT METHOD &nbsp;
+			div.panel-body.text-center
+
+				div.payment-outer-panel.col-md-6
+					div.payment-panel
+						h6
+							span.ion-ios-location &nbsp;&nbsp;
+							span BILLING ADDRESS
+						hr
+						div.col-xs-3
+							h6.credit-card-label ADDRESS
+							h6.credit-card-label CITY
+							h6.credit-card-label STATE
+							h6.credit-card-label ZIP
+						div.col-xs-9
+							
+
+				div.payment-outer-panel.col-md-6
+					div.payment-panel
+						h6
+							span.ion-card &nbsp;&nbsp;
+							span CREDIT CARD
+						hr
+						div.col-xs-3
+							h6.credit-card-label NUMBER
+							h6.credit-card-label CVC
+							h6.credit-card-label EXPIRATION
+						div.col-xs-9
+							+autoForm id='addCreditCard' type='insert' collection='PaymentInfo'
+								+afQuickField name='creditCard'
+								+afQuickField name='cvc'
+								+afQuickField name='expiration'
+								button(type='submit').btn.btn-primary ADD CARD
+
+				
+
