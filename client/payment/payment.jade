@@ -5,38 +5,48 @@ template(name='payments')
 				h5.panel-title 
 					span.ion-cash &nbsp;&nbsp;&nbsp;
 					span ADD A PAYMENT METHOD &nbsp;
-			div.panel-body.text-center
+			div.panel-body
 
+				// BILLING ADDRESS PANEL
 				div.payment-outer-panel.col-md-6
-					div.payment-panel
+					div.payment-panel-billing
 						h6
-							span.ion-ios-location &nbsp;&nbsp;
-							span BILLING ADDRESS
-						hr
-						div.col-xs-3
-							h6.credit-card-label ADDRESS
-							h6.credit-card-label CITY
-							h6.credit-card-label STATE
-							h6.credit-card-label ZIP
-						div.col-xs-9
+							span.ion-email &nbsp;&nbsp;
+							span ENTER BILLING ADDRESS
 							
-
+							div.checkbox
+								label
+									input(type='checkbox')#same-as-shipping
+									span &nbsp; SAME AS SHIPPING
+						hr
+						
+						+autoForm id='addBillingAddress' type='insert' collection='BillingAddress'
+							h6.credit-card-label.pull-left ADDRESS
+							+afQuickField name='address'
+							h6.credit-card-label.pull-left CITY
+							+afQuickField name='city'
+							h6.credit-card-label.pull-left STATE
+							+afQuickField name='state'
+							h6.credit-card-label.pull-left ZIP CODE
+							+afQuickField name='zip'
+							button(type='submit').btn.btn-primary SAVE BILLING ADDRESS
+				
+				// CREDIT CARD PANEL
 				div.payment-outer-panel.col-md-6
 					div.payment-panel
 						h6
 							span.ion-card &nbsp;&nbsp;
-							span CREDIT CARD
+							span ADD CREDIT CARD
 						hr
-						div.col-xs-3
-							h6.credit-card-label NUMBER
-							h6.credit-card-label CVC
-							h6.credit-card-label EXPIRATION
-						div.col-xs-9
-							+autoForm id='addCreditCard' type='insert' collection='PaymentInfo'
-								+afQuickField name='creditCard'
-								+afQuickField name='cvc'
-								+afQuickField name='expiration'
-								button(type='submit').btn.btn-primary ADD CARD
+					
+						+autoForm id='addCreditCard' type='insert' collection='PaymentInfo'
+							h6.credit-card-label.pull-left CARD NUMBER
+							+afQuickField name='creditCard'
+							h6.credit-card-label.pull-left CVC
+							+afQuickField name='cvc'
+							h6.credit-card-label.pull-left EXPIRATION DATE
+							+afQuickField name='expiration'
+							button(type='submit').btn.btn-primary ADD CARD
 
 				
 

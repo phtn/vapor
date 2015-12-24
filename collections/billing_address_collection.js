@@ -17,13 +17,7 @@ BillingAddressSchema = new SimpleSchema({
 			return Meteor.userId()
 		},
 		autoform: {
-			address: {
-		type: String,
-		label: 'Address',
-		autoform: {
-			label: false
-		}
-	},
+			label: false,
 			type: 'hidden'
 		}
 	},
@@ -36,21 +30,21 @@ BillingAddressSchema = new SimpleSchema({
 	},
 	city: {
 		type: String,
-		label: 'Address',
+		label: 'City',
 		autoform: {
 			label: false
 		}
 	},
 	state: {
 		type: String,
-		label: 'Address',
+		label: 'State',
 		autoform: {
 			label: false
 		}
 	},
 	zip: {
 		type: String,
-		label: 'Address',
+		label: 'Zip Code',
 		autoform: {
 			label: false
 		}
