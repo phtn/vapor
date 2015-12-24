@@ -38,5 +38,6 @@ aldeed:autoform
 service-configuration
 accounts-google
 accounts-facebook
+accounts-base
 hedcet:touch-swipe
 elevatedevdesign:autoform-jquery-payments

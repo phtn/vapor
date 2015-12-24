@@ -24,3 +24,8 @@ Meteor.publish('showCartSubmit', ()=> {
 Meteor.publish('showProfile', ()=> {
 	return Profiles.find({})
 });
+
+Meteor.publish('showCard', function() {
+	var currentUserId = this.userId;
+	return PaymentInfo.find({owner: currentUserId});
+});
