@@ -24,8 +24,15 @@ Meteor.publish('showCartSubmit', ()=> {
 Meteor.publish('showProfile', ()=> {
 	return Profiles.find({})
 });
-
+// CREDIT CARD
 Meteor.publish('showCard', function() {
 	var currentUserId = this.userId;
 	return PaymentInfo.find({owner: currentUserId});
 });
+
+// USER ORDERS
+Meteor.publish('showUserOrders', function() {
+	var currentUserId = this.userId;
+	return Orders.find({owner: currentUserId, status: 'new order'});
+});
+

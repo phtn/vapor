@@ -23,6 +23,7 @@ Template.adminNav.events({
 	},
 	'click #admin-logout' () {
 		Meteor.logout()
+		FlowRouter.go('/admin')
 	}
 });
 

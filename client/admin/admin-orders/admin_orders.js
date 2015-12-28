@@ -16,7 +16,9 @@ Template.adminOrders.events({
 			Meteor.call('setForDelivery', Session.get('order-list-id'))
 		} else if (Session.get('order-status') === 'for delivery') {
 			Meteor.call('setOrderCompleted', Session.get('order-list-id'))
-		} 
+		} else if (Session.get('order-status') === 'order fulfilled') {
+			Meteor.call('sendToArchives', Session.get('order-list-id'))
+		}
 	},
 	'click .it' () {
 		console.log(this.owner)
@@ -46,6 +48,12 @@ Template.adminOrders.helpers({
 	completedCount () {
 		return Orders.find({status: 'order fulfilled'}).count()
 	},
+	archivesCount () {
+		return Orders.find({status: 'archived'}).count()
+	},
+	archives () {
+		return Orders.find({status: 'archived'})
+	},
 	customer () {
 		return Session.get('order-list-cust')
 	},
@@ -57,6 +65,9 @@ Template.adminOrders.helpers({
 	},
 	billing () {
 		return BillingAddress.findOne({owner: Session.get('order-list-owner')})
+	},
+	creditCardInfo () {
+		return PaymentInfo.findOne({owner: Session.get('order-list-owner')})
 	},
 	action () {
 		if (Session.get('order-status') === 'new order') {

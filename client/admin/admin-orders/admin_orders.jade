@@ -7,6 +7,10 @@ template(name='adminOrders')
 				strong #{forDeliveryCount}
 			span.orders-panel-label#completed Completed : &nbsp;&nbsp;&nbsp;
 				strong #{completedCount}
+			a(data-toggle='modal' data-ripple-color="#000" data-target='#archives-list')
+				span.orders-panel-label Archives : &nbsp;&nbsp;&nbsp;
+				strong #{archivesCount}
+
 		div.list-group
 			+each orders
 				div.list-group-item
@@ -14,7 +18,7 @@ template(name='adminOrders')
 						span(class='#{type}')
 					div.row-content
 						div.action-secondary#view-order-list
-							a(data-toggle='modal' data-ripple-color="#000" data-target='#orders-list')
+							a(data-toggle='modal' data-ripple-color="#000" data-target='#orders-list').archive-link
 								span.ion-ios-paper
 						h6.name-h6.list-group-item-heading #{name} &nbsp;&nbsp;&nbsp;
 							span
@@ -75,8 +79,40 @@ template(name='adminOrders')
 											span.list-item-label #{city}
 										p
 											span.list-item-label #{state}, #{zip}
+								br
+								div.module-div
+									+with creditCardInfo
+										p Credit Card Info &nbsp;&nbsp;&nbsp; 
+											span.ion-card
+										hr
+										p
+											span.list-item-label #{creditCard}
+										p
+											span.list-item-label #{cvc}
+										p
+											span.list-item-label #{expiration}
 								
 								a(type='button' data-dismiss='modal' aria-hidden='true').btn.btn-info#action #{action}
 
-
-				
+	// ARCHIVES MODAL
+	div.container-fluid.modal-div
+		div.modal.backdrop.fade#archives-list
+			div.modal-dialog
+				div.modal-content
+					div.modal-header
+						button(type='button' data-dismiss='modal' aria-hidden='true').close
+									span.ion-close-round
+								h4.modal-title ARCHIVES &nbsp;&nbsp;&nbsp; #{archivesCount}
+							div.modal-body
+								br
+								br
+								div.module-div
+									+each archives
+										p
+											span.archive-label #{name}
+											span.archive-label #{phone}
+											span.archive-label #{email}
+											span.archive-label $ #{amount}
+										p
+											span.archive-label #{createdAt}
+										hr

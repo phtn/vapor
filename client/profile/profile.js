@@ -1,5 +1,6 @@
 
 Meteor.subscribe('showProfile')
+Meteor.subscribe('showOrders')
 
 // EVENTS
 Template.profile.events({
@@ -39,7 +40,9 @@ Template.profile.events({
 
 // HELPERS
 Template.profile.helpers({
-
+	userOrders () {
+		return Orders.find({owner: Meteor.userId(), status: 'new order'})
+	}
 });
 
 // RENDERED

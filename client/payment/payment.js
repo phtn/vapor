@@ -85,5 +85,5 @@ function getLastFour (number) {
 
 // RENDERED
 Template.payments.rendered = ()=> {
-	
+	$('#same-as-shipping').click()
 }

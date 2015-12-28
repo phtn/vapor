@@ -16,6 +16,14 @@ Meteor.methods({
 			}
 		})
 	},
+	sendToArchives (id) {
+		Orders.update({_id: id}, {
+			$set: {
+				status: 'archived',
+				editedAt: new Date()
+			}
+		})
+	},
 	removeAfterPay (id, owner) {
 		Orders.remove({_id: id})
 		CartSubmit.remove({owner: owner})
