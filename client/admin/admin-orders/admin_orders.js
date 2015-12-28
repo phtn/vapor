@@ -1,6 +1,7 @@
 
 Meteor.subscribe('showOrders');
 Meteor.subscribe('showCartSubmit');
+Meteor.subscribe('showBilling');
 
 // EVENTS
 Template.adminOrders.events({
@@ -53,6 +54,9 @@ Template.adminOrders.helpers({
 	},
 	profile () {
 		return Profiles.findOne({owner: Session.get('order-list-owner')})
+	},
+	billing () {
+		return BillingAddress.findOne({owner: Session.get('order-list-owner')})
 	},
 	action () {
 		if (Session.get('order-status') === 'new order') {

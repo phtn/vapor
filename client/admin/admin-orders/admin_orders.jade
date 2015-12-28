@@ -23,6 +23,9 @@ template(name='adminOrders')
 							span
 									i.ion-android-mail
 							span &nbsp;	#{email} &nbsp;&nbsp;
+							span
+									i.ion-calendar
+							span &nbsp;	#{createdAt} &nbsp;&nbsp;
 						span $ #{amount} &nbsp;&nbsp;
 				hr
 
@@ -33,7 +36,7 @@ template(name='adminOrders')
 					div.modal-header
 						button(type='button' data-dismiss='modal' aria-hidden='true').close
 									span.ion-close-round
-								h4.modal-title Orders List
+								h4.modal-title Order List Items
 							div.modal-body
 								br
 								br
@@ -51,6 +54,19 @@ template(name='adminOrders')
 								div.module-div
 									+with profile
 										p Shipping Address &nbsp;&nbsp;&nbsp; 
+											span.ion-paper-airplane 
+										hr
+										p
+											span.list-item-label #{address}
+										p
+											span.list-item-label #{city}
+										p
+											span.list-item-label #{state}, #{zip}
+
+								br
+								div.module-div
+									+with billing
+										p Billing Address &nbsp;&nbsp;&nbsp; 
 											span.ion-paper-airplane 
 										hr
 										p

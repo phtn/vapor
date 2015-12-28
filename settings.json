@@ -1,5 +1,8 @@
 {
   "public": {
-  		
+  		"help": "help code"
+  },
+  "private": {
+  	"adminEmail": "phtn458@gmail.com"
   }
 }

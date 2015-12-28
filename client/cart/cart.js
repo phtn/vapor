@@ -62,34 +62,7 @@ Template.cart.events({
 		}
 	
 	/*
-	// INSERT TO ORDERS
-		var file = Profiles.findOne({owner: Meteor.userId()})
-		if (Profiles.find({owner: Meteor.userId(), address: {$ne: null}}).count() !== 0) {
-			Meteor.call('addToOrders',
-				Meteor.userId(),
-				file.name,
-				file.phone,
-				file.email,
-				Session.get('total'),
-				'new order',
-				'ion-bag',
-			);
-
-		// DELETE CART
-			Meteor.call('removeAfterSubmit', Meteor.userId());
-
-		// ROUTE
-			FlowRouter.go('/order-submitted')
-
-		} else {
-			FlowRouter.go('/profile')
-			Bert.alert({
-			  type: 'must-signin',
-			  message: 'Enter Complete Shipping Address.',
-			  style: 'growl-top-right',
-			  icon: 'ion-ios-location'
-			});
-		}
+	
 	*/
 
 

@@ -5,7 +5,10 @@ function accessAdmin(template) {
 FlowRouter.route('/admin', {
 	name: 'Admin',
 	action(params) {
-		accessAdmin('adminLanding')
+		if (Meteor.user()) {
+			accessAdmin('adminLanding')	
+		}	
+		
 	}
 });
 

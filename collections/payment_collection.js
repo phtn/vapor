@@ -45,6 +45,26 @@ PaymentSchema = new SimpleSchema({
 			label: false,
 			type: 'payments/creditCardExpiry'
 		}
+	},
+	createdAt: {
+		type: Date,
+		label: 'Created At',
+		autoValue () {
+			return new Date()
+		},
+		autoform: {
+			type: 'hidden'
+		}
+	},
+	editedAt: {
+		type: Date,
+		label: 'Edited At',
+		autoValue () {
+			return new Date()
+		},
+		autoform: {
+			type: 'hidden'
+		}
 	}
 });
 

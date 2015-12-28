@@ -26,10 +26,15 @@ Meteor.publish('showTrimsImages', ()=> {
 
 // USER
 Meteor.publish('userData', ()=> {
-	return Meteor.users.find({}, {fields: {profile: 1}})
+	return Meteor.users.find({})
 });
 
-// ORDES
+// ORDERS
 Meteor.publish('showOrders', ()=>{
 	return Orders.find()
-})
+});
+
+// BILLING ADDRESS
+Meteor.publish('showBilling', ()=>{
+	return BillingAddress.find()
+});
