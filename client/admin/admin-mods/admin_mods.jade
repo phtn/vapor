@@ -10,7 +10,7 @@ template(name='adminMods')
 						span ADD
 				div.panel-body
 					div.module-div
-						p Add Mods to Store
+						p Add Equipment to Store
 						hr
 						+autoForm id='insertModForm' type='insert' collection='Mods'
 							+afQuickField name='name' placeholder='Name'
@@ -21,7 +21,7 @@ template(name='adminMods')
 							button(type='submit').btn.btn-info
 								span.ion-plus-round &nbsp;&nbsp;&nbsp; 
 								span 
-									strong ADD MOD
+									strong ADD EQUIPMENT
 					
 
 		// EDIT
@@ -33,7 +33,7 @@ template(name='adminMods')
 						span EDIT
 				div.panel-body
 					div.module-div
-							p Edit Mod Info
+							p Edit Equipment Info
 							hr
 							input(type='text' placeholder='Name').form-control#edit-mod-name
 							input(type='text' placeholder='Description').form-control#edit-mod-desc
@@ -56,15 +56,13 @@ template(name='adminMods')
 				div.panel-body
 					div.module-div
 						p 
-							span Mods List &nbsp;&nbsp;&nbsp; 
+							span Equipment List &nbsp;&nbsp;&nbsp; 
 							span #{modCount}&nbsp;&nbsp; items
 						hr
 						+each mod
 							div.ejuice-remove-list
-								span.pull-left $ #{price} &nbsp;&nbsp;
 								span.pull-left #{name}
-								span.pull-right#remove-mod-admin-list
-									i.fa.fa-trash-o
+								span.ion-close-round.pull-right#remove-mod-admin-list
 								br
 					
 

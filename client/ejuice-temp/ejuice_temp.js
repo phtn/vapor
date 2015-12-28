@@ -87,7 +87,7 @@ Template.ejuiceTemp.events({
 
 			Bert.alert({
 			  type: 'add-to-cart',
-			  message: 'Successfully added to cart!',
+			  message: Session.get('ejuice-name') + ' added to cart!',
 			  style: 'growl-top-right',
 			  icon: 'ion-android-checkmark-circle'
 			});

@@ -106,8 +106,8 @@ template(name='adminEjuice')
 						+each ejuice
 							div.ejuice-remove-list
 								span.pull-left #{name}
-								span.pull-right#remove-ejuice-admin-list
-									i.fa.fa-trash-o
+								span.ion-close-round.pull-right#remove-ejuice-admin-list
+									
 								br
 					span.ion-ios-more.divider
 					// BOTTLE SIZE
@@ -118,8 +118,7 @@ template(name='adminEjuice')
 							div.ejuice-remove-list
 								span.pull-left #{size} ml &nbsp;&nbsp;&nbsp;
 								span.pull-left $ #{price}
-								span.pull-right#remove-size-admin-list
-									i.fa.fa-trash-o
+								span.ion-close-round.pull-right#remove-size-admin-list
 								br
 					span.ion-ios-more.divider
 					// NICOTINE LEVEL
@@ -129,7 +128,6 @@ template(name='adminEjuice')
 						+each nic
 							div.ejuice-remove-list
 								span.pull-left #{level} mg
-								span.pull-right#remove-nic-admin-list
-									i.fa.fa-trash-o
+								span.ion-close-round.pull-right#remove-nic-admin-list
 								br
 
