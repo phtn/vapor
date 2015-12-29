@@ -15,8 +15,8 @@ Template.adminNav.events({
 	'click #admin-mods' () {
 		FlowRouter.go('/admin/mods')
 	},
-	'click #admin-trims' () {
-		FlowRouter.go('/admin/trims')
+	'click #admin-home' () {
+		FlowRouter.go('/admin/home')
 	},
 	'click #admin-orders' () {
 		FlowRouter.go('/admin/orders')

@@ -1,7 +1,8 @@
 template(name='home')
 	div.carousel
-		div(data-src='/assets/img/carousel/c4.jpg')
-		div(data-src='/assets/img/carousel/c4.jpg')
+		+each image
+			div(data-src='#{url}')
+		//div(data-src='/assets/img/carousel/c4.jpg')
 	div.welcome.text-center
 		h3 Welcome to VAPORTIMME NEW HOPE!
 		p.welcome-p 

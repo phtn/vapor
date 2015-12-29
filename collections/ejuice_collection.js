@@ -2,12 +2,12 @@ Ejuices = new Mongo.Collection('ejuices');
 
 Ejuices.allow({
 	insert () {
-		return Meteor.user().services.google.email === Meteor.settings.private.adminEmail
+		return Meteor.user().services.google.email === 	'phtn458@gmail.com'
 		//return true
 	},
 	update () {
-		return Meteor.user().services.google.email === Meteor.settings.private.adminEmail
-		//return true
+		//return Meteor.user().services.google.email === Meteor.settings.private.adminEmail
+		return true
 	}
 });
 

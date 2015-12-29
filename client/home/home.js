@@ -5,3 +5,9 @@ Template.home.rendered = () => {
 		thumbnails: false
 	});
 }
+// HELPERS
+Template.home.helpers({
+	image () {
+		return HomeCarousel.find()
+	}
+});

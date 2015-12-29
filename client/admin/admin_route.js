@@ -26,10 +26,10 @@ FlowRouter.route('/admin/mods', {
 	}
 });
 
-FlowRouter.route('/admin/trims', {
-	name: 'Admin Trims',
+FlowRouter.route('/admin/home', {
+	name: 'Admin Home',
 	action(params) {
-		accessAdmin('adminTrims')
+		accessAdmin('adminHome')
 	}
 });
 

@@ -36,3 +36,12 @@ Meteor.publish('showUserOrders', function() {
 	return Orders.find({owner: currentUserId, status: 'new order'});
 });
 
+// HOME
+
+Meteor.publish('showHomeImages', ()=> {
+	return HomeImages.find()
+});
+
+Meteor.publish('showHomeCarousel', ()=> {
+	return HomeCarousel.find()
+});

@@ -1,4 +1,4 @@
-template(name='adminTrims')
+template(name='adminHome')
 	div.container-fluid.text-center.admin-body-div
 
 		// ADD
@@ -10,22 +10,18 @@ template(name='adminTrims')
 						span ADD
 				div.panel-body
 					div.module-div
-						p Add Trims to Store
+						p Add Home Images
 						hr
-						+autoForm id='insertTrimForm' type='insert' collection='Trims'
-							+afQuickField name='name' placeholder='Name'
-							+afQuickField name='desc' placeholder='Description'
-							+afQuickField name='kit' placeholder='Kit Includes'
-							+afQuickField name='price' placeholder='Set Price'
-							+afQuickField name='imgId' type='cfs-file' collection='trims-images'
+						+autoForm id='insertHomeImagesForm' type='insert' collection='HomeImages'
+							+afQuickField name='imageFile' type='cfs-file' collection='home-carousel'
 							button(type='submit').btn.btn-info
 								span.ion-plus-round &nbsp;&nbsp;&nbsp; 
 								span 
-									strong ADD TRIM
+									strong ADD IMAGE
 					
 
 		// EDIT
-		div.col-lg-4
+		//div.col-lg-4
 			div.panel.panel-primary
 				div.panel-heading
 					h5.panel-title 
@@ -33,7 +29,7 @@ template(name='adminTrims')
 						span EDIT
 				div.panel-body
 					div.module-div
-							p Edit Trim Info
+							p Edit Home Images Info
 							hr
 							input(type='text' placeholder='Name').form-control#edit-trim-name
 							input(type='text' placeholder='Description').form-control#edit-trim-desc
@@ -56,15 +52,14 @@ template(name='adminTrims')
 				div.panel-body
 					div.module-div
 						p 
-							span Trims List &nbsp;&nbsp;&nbsp;
-							span #{trimCount}&nbsp;&nbsp; items
+							span Home Carousel Image List &nbsp;&nbsp;&nbsp;
+							span #{trimCount}&nbsp;&nbsp; images
 						hr
-						+each trim
+						+each image
 							div.ejuice-remove-list
-								span.pull-left $ #{price} &nbsp;&nbsp;
-								span.pull-left #{name}
-								span.pull-right#remove-trim-admin-list
-									i.fa.fa-trash-o
+								img(src='#{url}' style='width:20%; height:20%')
+								span.ion-close-round.pull-right#remove-image-admin-list
+									
 								br
 					
 
